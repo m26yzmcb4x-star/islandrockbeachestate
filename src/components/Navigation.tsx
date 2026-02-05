@@ -37,19 +37,19 @@ export default function Navigation() {
         <>
             <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
                 <div className={styles.container}>
-                    <Link href="/" className={styles.logo}>
-                        Island Rock
-                    </Link>
-
                     <div className={styles.desktopMenu}>
-                        {navLinks.map((link) => (
-                            <Link key={link.href} href={link.href} className={styles.link}>
-                                {link.name}
-                            </Link>
-                        ))}
-                        <Link href="/contact" className={styles.cta}>
-                            Enquire
+                        <Link href="/" className={styles.link}>The Estate</Link>
+                        <Link href="/location" className={styles.link}>Location</Link>
+                        <Link href="/villas" className={styles.link}>The Villas</Link>
+
+                        <Link href="/" className={styles.logoContainer}>
+                            <img src="/island-rock-logo.jpg" alt="Island Rock" className={styles.logoImage} />
                         </Link>
+
+                        <Link href="/lifestyle" className={styles.link}>Lifestyle</Link>
+                        <Link href="/investment" className={styles.link}>Investment</Link>
+                        <Link href="/gallery" className={styles.link}>Gallery</Link>
+                        <Link href="/contact" className={styles.cta}>Enquire</Link>
                     </div>
 
                     <button
@@ -59,6 +59,11 @@ export default function Navigation() {
                     >
                         Menu
                     </button>
+
+                    {/* Mobile Logo centered */}
+                    <Link href="/" className={`${styles.logoContainer} ${styles.mobileLogo}`}>
+                        <img src="/island-rock-logo.jpg" alt="Island Rock" className={styles.logoImage} />
+                    </Link>
                 </div>
             </nav>
 

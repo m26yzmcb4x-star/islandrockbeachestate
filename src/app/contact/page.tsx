@@ -19,28 +19,39 @@ export default function ContactPage() {
                         <h2 className={styles.heading}>Enquiries</h2>
                         <p className={styles.paragraph}>
                             Please leave your details below and our in-house sales team will be in touch.
-                            We respect your privacy and will not share your information.
+                            Enquiries are sent directly to sales@islandrock.co.mz.
                         </p>
 
-                        <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '2rem', width: '100%' }}>
+                        <form
+                            action="https://formspree.io/f/mqkenqro"
+                            method="POST"
+                            style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '2rem', width: '100%' }}
+                        >
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name"
+                                required
                                 style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)' }}
                             />
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email Address"
+                                required
                                 style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)' }}
                             />
                             <input
                                 type="tel"
+                                name="phone"
                                 placeholder="Phone Number (Optional)"
                                 style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)' }}
                             />
                             <textarea
+                                name="message"
                                 rows={5}
                                 placeholder="Message (e.g. Interested in Villa 4)"
+                                required
                                 style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)' }}
                             />
                             <button

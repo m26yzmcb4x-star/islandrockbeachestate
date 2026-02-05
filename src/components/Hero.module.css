@@ -37,10 +37,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/hero-reef.jpg');
+    background-image: url('/images/home-hero-new.jpg');
     /* Reef/Ocean vibe */
     background-size: cover;
     background-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    /* Try to sharpen slightly if scaled */
     z-index: 0;
     /* subtle zoom animation */
     animation: zoom 20s ease infinite alternate;
