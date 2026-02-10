@@ -1,0 +1,248 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--color-white);
+}
+
+.nav.scrolled {
+    background: rgba(245, 241, 232, 0.95);
+    /* Sand color with opacity */
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    color: var(--color-charcoal);
+}
+
+.nav.scrolled .logo {
+    color: var(--color-charcoal);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    height: 100px;
+}
+
+
+
+.desktopMenu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.link:hover::after,
+.link.active::after {
+    width: 100%;
+}
+
+.link.active {
+    opacity: 1;
+}
+
+.cta {
+    padding: 0.8rem 1.8rem;
+    background: transparent;
+    /* Changed to transparent outline initially */
+    border: 1px solid currentColor;
+    color: currentColor;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+    border-color: var(--color-charcoal);
+}
+
+.nav.scrolled .cta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+}
+
+.desktopCta {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.8rem 1.8rem;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: currentColor;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.desktopCta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+    border-color: var(--color-charcoal);
+}
+
+.nav.scrolled .desktopCta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+}
+
+/* Explicit right-aligned CTA */
+.rightCta {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.8rem 1.8rem;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: currentColor;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    display: block;
+    z-index: 10;
+}
+
+.rightCta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+    border-color: var(--color-charcoal);
+}
+
+.nav.scrolled .rightCta:hover {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+}
+
+@media (max-width: 1024px) {
+    .rightCta {
+        display: none;
+    }
+}
+
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-sand);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+    visibility: hidden;
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+@media (min-width: 1025px) {
+    .mobileMenu {
+        display: none;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-charcoal);
+}
+
+.mobileLink {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-charcoal);
+    text-transform: capitalize;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        justify-content: space-between;
+        height: 70px;
+    }
+
+    .desktopMenu {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+        order: 1;
+    }
+
+
+}

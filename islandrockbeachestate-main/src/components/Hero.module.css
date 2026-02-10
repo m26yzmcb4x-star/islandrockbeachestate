@@ -1,0 +1,127 @@
+.hero {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--color-white);
+    background: var(--color-ocean);
+    /* Fallback */
+}
+
+.full {
+    height: 100vh;
+}
+
+.small {
+    height: 60vh;
+    min-height: 400px;
+}
+
+.backgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+/* Placeholder for background image */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/home-hero-new.jpg');
+    /* Reef/Ocean vibe */
+    background-size: cover;
+    background-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    /* Try to sharpen slightly if scaled */
+    z-index: 0;
+    /* subtle zoom animation */
+    animation: zoom 20s ease infinite alternate;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.headline {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.subheadline {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    opacity: 0;
+    letter-spacing: 0.05em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.cta {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    animation: fadeInUp 1s ease 1s forwards;
+}
+
+.cta:hover {
+    background: var(--color-white);
+    color: var(--color-charcoal);
+    border-color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .subheadline {
+        font-size: 1rem;
+    }
+}
