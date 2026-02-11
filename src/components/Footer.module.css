@@ -10,8 +10,8 @@
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 3rem;
     margin-bottom: 4rem;
 }
 
@@ -61,6 +61,68 @@
 
 .link:hover {
     opacity: 1;
+    color: var(--color-white);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.socialIcon {
+    color: var(--color-sand);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: var(--color-white);
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.newsletterInput {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border-radius: 0;
+}
+
+.newsletterInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletterInput:focus {
+    outline: none;
+    border-color: var(--color-sand);
+}
+
+.newsletterButton {
+    padding: 0 1.5rem;
+    background: var(--color-sand);
+    color: var(--color-charcoal);
+    border: none;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletterButton:hover {
+    background: var(--color-white);
 }
 
 .bottom {

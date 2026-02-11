@@ -29,33 +29,24 @@
     z-index: 1;
 }
 
-/* Placeholder for background image */
-.hero::before {
-    content: '';
+/* Background Image Layer for Parallax */
+.backgroundImage {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
+    /* Taller to allow for scrolling parallax */
+    top: -10%;
+    /* Center it vertically initially */
     background-image: url('/images/home-hero-new.jpg');
-    /* Reef/Ocean vibe */
     background-size: cover;
     background-position: center;
     image-rendering: -webkit-optimize-contrast;
-    /* Try to sharpen slightly if scaled */
     z-index: 0;
-    /* subtle zoom animation */
-    animation: zoom 20s ease infinite alternate;
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.05);
-    }
+    will-change: transform;
+    /* Determine if we keep the zoom animation or replace with parallax */
+    /* animation: zoom 20s ease infinite alternate; */
 }
 
 .content {

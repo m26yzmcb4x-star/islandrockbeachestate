@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -32,9 +33,35 @@ export default function Footer() {
                         <Link href="/gallery" className={styles.link}>Gallery</Link>
                     </div>
                 </div>
+
+                <div className={styles.column}>
+                    <h4>Newsletter</h4>
+                    <p className={styles.tagline} style={{ marginBottom: '1rem' }}>
+                        Join our list for exclusive estate updates.
+                    </p>
+                    <form className={styles.newsletterForm} action="/contact">
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            className={styles.newsletterInput}
+                            required
+                        />
+                        <button type="submit" className={styles.newsletterButton}>
+                            Join
+                        </button>
+                    </form>
+                </div>
             </div>
 
             <div className={styles.bottom}>
+                <div className={styles.socials} style={{ justifyContent: 'center', marginBottom: '1rem' }}>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <Instagram size={20} className={styles.socialIcon} />
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <Facebook size={20} className={styles.socialIcon} />
+                    </a>
+                </div>
                 &copy; {new Date().getFullYear()} Island Rock Beach Estate. All rights reserved.
             </div>
         </footer>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.css";
 
@@ -16,8 +19,22 @@ export default function Hero({
     ctaLink = "/contact",
     variant = "full",
 }: HeroProps) {
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setOffset(window.scrollY);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <section className={`${styles.hero} ${styles[variant]}`}>
+            <div
+                className={styles.backgroundImage}
+                style={{ transform: `translateY(${offset * 0.5}px)` }}
+            />
             <div className={styles.backgroundOverlay} />
             <div className={styles.content}>
                 <h1 className={styles.headline}>{headline}</h1>
