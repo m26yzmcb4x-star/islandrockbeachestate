@@ -18,7 +18,7 @@ export async function POST(request: Request) {
         const resend = new Resend(process.env.RESEND_API_KEY);
 
         const { data, error } = await resend.emails.send({
-            from: 'Island Rock Estate <onboarding@resend.dev>', // Default for testing until domain verification
+            from: 'Island Rock Estate <info@islandrockestate.com>',
             to: ['fritz@islandrockestate.com'],
             replyTo: email,
             subject: `New Enquiry from ${name} - Island Rock Estate`,
