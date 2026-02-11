@@ -1,29 +1,28 @@
 "use client";
-
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 
 export default function ContactPage() {
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
         message: "",
-        honeypot: "", // Spam protection
+        honeypot: "" // Client-side honeypot
     });
-    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-    const [errorMessage, setErrorMessage] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("submitting");
+        setErrorMessage("");
 
         try {
             const response = await fetch("/api/contact", {
@@ -34,17 +33,17 @@ export default function ContactPage() {
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
-
             if (response.ok) {
                 setStatus("success");
                 setFormData({ name: "", email: "", phone: "", message: "", honeypot: "" });
             } else {
-                throw new Error(data.error || "Something went wrong.");
+                const data = await response.json();
+                setStatus("error");
+                setErrorMessage(data.message || "Failed to send message. Please try again.");
             }
-        } catch (error: any) {
+        } catch (error) {
             setStatus("error");
-            setErrorMessage(error.message);
+            setErrorMessage("An unexpected error occurred.");
         }
     };
 
@@ -55,7 +54,7 @@ export default function ContactPage() {
                 subheadline="Start the conversation about your forever place."
                 variant="small"
                 ctaText="Email Us"
-                ctaLink="mailto:sales@islandrock.co.mz"
+                ctaLink="mailto:fritz@islandrockestate.com"
             />
 
             <Section background="white">
@@ -64,18 +63,25 @@ export default function ContactPage() {
                         <h2 className={styles.heading}>Enquiries</h2>
                         <p className={styles.paragraph}>
                             Please leave your details below and our in-house sales team will be in touch.
-                            Enquiries are sent directly to sales@islandrock.co.mz.
+                            Enquiries are sent directly to fritz@islandrockestate.com.
                         </p>
 
                         {status === "success" ? (
-                            <div style={{ padding: '2rem', background: '#e6ffe6', border: '1px solid #ccffcc', borderRadius: '4px', marginTop: '2rem' }}>
-                                <h3 style={{ marginBottom: '1rem', color: '#006600' }}>Message Sent!</h3>
-                                <p>Thank you for your enquiry. We will be in touch shortly.</p>
+                            <div style={{ padding: '2rem', background: '#e6ffe6', border: '1px solid #ccffcc', borderRadius: '4px', marginTop: '2rem', color: '#006600' }}>
+                                <h3 style={{ marginTop: 0 }}>Enquiry Sent!</h3>
+                                <p>Thank you for contacting us. We will get back to you shortly.</p>
                                 <button
                                     onClick={() => setStatus("idle")}
-                                    style={{ marginTop: '1rem', padding: '0.5rem 1rem', background: 'transparent', border: '1px solid currentColor', cursor: 'pointer' }}
+                                    style={{
+                                        marginTop: '1rem',
+                                        padding: '0.5rem 1rem',
+                                        background: 'var(--color-charcoal)',
+                                        color: 'white',
+                                        border: 'none',
+                                        cursor: 'pointer'
+                                    }}
                                 >
-                                    Send another message
+                                    Send Another
                                 </button>
                             </div>
                         ) : (
@@ -154,16 +160,77 @@ export default function ContactPage() {
 
                     <div className={styles.column} style={{ padding: '2rem', background: 'var(--color-sand)' }}>
                         <h3 className={styles.heading} style={{ fontSize: '1.5rem' }}>Direct Contact</h3>
-                        <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                             <div>
-                                <strong>Sales Office</strong><br />
-                                <a href="mailto:sales@islandrock.co.mz">sales@islandrock.co.mz</a>
+                                <strong>Elise</strong><br />
+                                <a href="mailto:elise@islandrockestate.com" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>elise@islandrockestate.com</a>
+                                <a href="tel:+27827735229" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>+27 82 773 5229</a>
+                                <a
+                                    href="https://wa.me/27827735229"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        padding: '0.5rem 1rem',
+                                        background: '#25D366',
+                                        color: 'white',
+                                        borderRadius: '4px',
+                                        textDecoration: 'none',
+                                        fontSize: '0.9rem',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    WhatsApp Elise
+                                </a>
                             </div>
+
                             <div>
-                                <strong>WhatsApp</strong><br />
-                                <a href="tel:+258123456789">+258 123 456 789</a>
+                                <strong>Fritz</strong><br />
+                                <a href="mailto:fritz@islandrockestate.com" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>fritz@islandrockestate.com</a>
+                                <a href="tel:+27824564103" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>+27 82 456 4103</a>
+                                <a
+                                    href="https://wa.me/27824564103"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        padding: '0.5rem 1rem',
+                                        background: '#25D366',
+                                        color: 'white',
+                                        borderRadius: '4px',
+                                        textDecoration: 'none',
+                                        fontSize: '0.9rem',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    WhatsApp Fritz
+                                </a>
                             </div>
-                            <div style={{ marginTop: '2rem' }}>
+
+                            <div>
+                                <strong>Shane</strong><br />
+                                <a href="mailto:shane@islandrockestate.com" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>shane@islandrockestate.com</a>
+                                <a href="tel:+258850627916" style={{ display: 'block', marginBottom: '0.5rem', color: 'inherit', textDecoration: 'none' }}>+258 85 062 7916</a>
+                                <a
+                                    href="https://wa.me/258850627916"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        padding: '0.5rem 1rem',
+                                        background: '#25D366',
+                                        color: 'white',
+                                        borderRadius: '4px',
+                                        textDecoration: 'none',
+                                        fontSize: '0.9rem',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    WhatsApp Shane
+                                </a>
+                            </div>
+
+                            <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '2rem' }}>
                                 <strong>Location</strong><br />
                                 Jangamo District,<br />
                                 Inhambane Province,<br />

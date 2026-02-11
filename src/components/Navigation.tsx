@@ -24,8 +24,9 @@ export default function Navigation() {
         setIsMobileOpen(false);
     }, [pathname]);
 
+    // Combined nav links for consistency
     const navLinks = [
-        { name: "The Estate", href: "/estate" },
+        { name: "The Estate", href: "/" }, // Changed from /estate to / to match previous desktop structure acting as Home
         { name: "Location", href: "/location" },
         { name: "The Villas", href: "/villas" },
         { name: "Lifestyle", href: "/lifestyle" },
@@ -37,19 +38,21 @@ export default function Navigation() {
         <>
             <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
                 <div className={styles.container}>
+                    {/* Centered Desktop Menu */}
                     <div className={styles.desktopMenu}>
-                        <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}>The Estate</Link>
-                        <Link href="/location" className={`${styles.link} ${pathname === '/location' ? styles.active : ''}`}>Location</Link>
-                        <Link href="/villas" className={`${styles.link} ${pathname === '/villas' ? styles.active : ''}`}>The Villas</Link>
-
-
-                        <Link href="/lifestyle" className={`${styles.link} ${pathname === '/lifestyle' ? styles.active : ''}`}>Lifestyle</Link>
-                        <Link href="/investment" className={`${styles.link} ${pathname === '/investment' ? styles.active : ''}`}>Investment</Link>
-                        <Link href="/gallery" className={`${styles.link} ${pathname === '/gallery' ? styles.active : ''}`}>Gallery</Link>
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`${styles.link} ${pathname === link.href ? styles.active : ''}`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
 
+                    {/* Right-aligned Enquire Button (Always visible on desktop) */}
                     <Link href="/contact" className={styles.rightCta}>Enquire</Link>
-
 
                     <button
                         className={styles.menuButton}
@@ -58,10 +61,10 @@ export default function Navigation() {
                     >
                         Menu
                     </button>
-
                 </div>
             </nav>
 
+            {/* Mobile Menu */}
             <div className={`${styles.mobileMenu} ${isMobileOpen ? styles.open : ""}`}>
                 <button
                     className={styles.closeButton}
@@ -71,14 +74,12 @@ export default function Navigation() {
                     <X size={32} />
                 </button>
 
-                <Link href="/" className={styles.mobileLink}>
-                    Home
-                </Link>
                 {navLinks.map((link) => (
                     <Link key={link.href} href={link.href} className={styles.mobileLink}>
                         {link.name}
                     </Link>
                 ))}
+                {/* Enquire in mobile menu as well */}
                 <Link href="/contact" className={styles.mobileLink} style={{ marginTop: '1rem', textDecoration: 'underline' }}>
                     Enquire
                 </Link>
