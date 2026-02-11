@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export async function POST(request: Request) {
     try {
@@ -15,18 +15,12 @@ export async function POST(request: Request) {
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_APP_PASSWORD,
-            },
-        });
+        const resend = new Resend(process.env.RESEND_API_KEY);
 
-        const mailOptions = {
-            from: process.env.GMAIL_USER, // Sender address (must be the authenticated user)
-            to: 'fritz@islandrockestate.com', // Recipient
-            replyTo: email, // Allow replying directly to the enquirer
+        const { data, error } = await resend.emails.send({
+            from: 'Island Rock Estate <onboarding@resend.dev>', // Default for testing until domain verification
+            to: ['fritz@islandrockestate.com'],
+            replyTo: email,
             subject: `New Enquiry from ${name} - Island Rock Estate`,
             text: `
 Name: ${name}
@@ -45,14 +39,17 @@ ${message}
 <p><strong>Message:</strong></p>
 <p>${message.replace(/\n/g, '<br>')}</p>
             `,
-        };
+        });
 
-        await transporter.sendMail(mailOptions);
+        if (error) {
+            console.error('Resend error:', error);
+            return NextResponse.json({ message: 'Failed to send email', error }, { status: 500 });
+        }
 
-        return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
+        return NextResponse.json({ message: 'Email sent successfully', data }, { status: 200 });
 
     } catch (error) {
-        console.error('Error sending email:', error);
-        return NextResponse.json({ message: 'Failed to send email' }, { status: 500 });
+        console.error('Error processing request:', error);
+        return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
     }
 }
