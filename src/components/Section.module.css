@@ -9,6 +9,15 @@
     padding: 0 2rem;
 }
 
+.section.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.section.sand {
+    background-color: #F5F5F0;
+}
+
 .sand {
     background-color: var(--color-sand);
 }

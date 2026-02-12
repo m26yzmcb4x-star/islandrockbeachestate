@@ -31,6 +31,7 @@ export default function Navigation() {
         { name: "The Villas", href: "/villas" },
         { name: "Lifestyle", href: "/lifestyle" },
         { name: "Investment", href: "/investment" },
+        { name: "FAQ", href: "/faq" },
         { name: "Gallery", href: "/gallery" },
     ];
 

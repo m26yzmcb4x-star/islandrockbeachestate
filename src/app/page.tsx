@@ -9,34 +9,31 @@ export default function Home() {
   return (
     <main>
       <Hero
-        headline="Island Rock Beach Estate"
-        subheadline="A rare reef-protected beachfront estate in Jangamo, Mozambique."
-        ctaText="Enquire"
-        ctaLink="/contact"
+        headline="Island Rock Estate — Mozambique"
+        subheadline="Private Coastal Living. Rare Investment Opportunity."
+        ctaText="Explore the Estate"
+        ctaLink="#lifestyle"
       />
 
-      <Section background="sand">
-        <ScrollReveal>
-          <h2 className={styles.largeStatement}>
-            "This is a forever place, not a resort. A quiet, timeless sanctuary designed for living, not showing."
-          </h2>
-        </ScrollReveal>
-      </Section>
+      <div className={styles.locationBanner}>
+        Southern Mozambique — Inhambane Province — Jangamo District
+      </div>
 
-      <Section background="white">
+      <Section id="lifestyle" background="white">
         <ScrollReveal>
           <div className={styles.introGrid}>
             <div className={styles.textColumn}>
-              <span className={styles.sectionTitle}>The Estate</span>
-              <h3 className={styles.heading}>Untouched Luxury</h3>
+              <span className={styles.sectionTitle}>The Lifestyle</span>
+              <h3 className={styles.heading}>Untouched Coastal Living</h3>
               <p className={styles.paragraph}>
-                Island Rock is a low-density, ultra-private beachfront estate located in Jangamo District.
-                With only 20 exclusive villas on large erven, we prioritize privacy, space, and a deeply grounding coastal lifestyle.
+                Wake up to the Indian Ocean in one of Africa’s last untouched coastal regions.
+                Island Rock Estate offers reef-protected waters, pristine beaches, and indigenous dune forests.
+                <br /><br />
+                <strong>This is not a resort — this is preserved coastal land.</strong>
               </p>
-              <Link href="/estate" className={styles.link}>Discover The Estate</Link>
             </div>
             <div className={styles.imageColumn}>
-              <img src="/images/coastline.jpg" alt="Estate coastline" className={styles.imagePlaceholder} />
+              <img src="/images/coastline.jpg" alt="Untouched Coastline" className={styles.imagePlaceholder} />
             </div>
           </div>
         </ScrollReveal>
@@ -46,16 +43,18 @@ export default function Home() {
         <ScrollReveal>
           <div className={styles.introGrid}>
             <div className={styles.imageColumn}>
-              <img src="/images/reef-detail.jpg" alt="Reef protected bay" className={styles.imagePlaceholder} />
+              <div style={{ width: '100%', height: '100%', background: '#333333' }}></div>
             </div>
             <div className={styles.textColumn}>
-              <span className={styles.sectionTitle}>Location</span>
-              <h3 className={styles.heading}>Reef-Protected Bay</h3>
+              <span className={styles.sectionTitle}>The Investment</span>
+              <h3 className={styles.heading}>Enduring Value</h3>
               <p className={styles.paragraph}>
-                Set within a reef-protected bay with calm waters and natural swimming pools,
-                Island Rock offers safe swimming, deep-sea fishing, and untouched coastal landscapes.
+                Secure a limited beachfront position in an emerging destination.
+                With low density and high privacy, Island Rock offers early-stage positioning for long-term appreciation.
+                <br /><br />
+                <strong>Own early. Benefit long-term.</strong>
               </p>
-              <Link href="/location" className={styles.link}>Explore Location</Link>
+              <Link href="/investment" className={styles.link}>View Investment Potential</Link>
             </div>
           </div>
         </ScrollReveal>
@@ -64,50 +63,60 @@ export default function Home() {
       <Section background="white">
         <ScrollReveal>
           <div className={styles.textColumn} style={{ textAlign: 'center', alignItems: 'center' }}>
-            <span className={styles.sectionTitle}>The Villas</span>
-            <h3 className={styles.heading}>Modern Thatch Architecture</h3>
+            <span className={styles.sectionTitle}>Why Mozambique</span>
+            <h3 className={styles.heading}>Raw Nature. Refined Living.</h3>
             <div className={styles.featuresGrid}>
               <div className={styles.featureCard}>
                 <Gem size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                <h4 className={styles.featureTitle}>Exclusive</h4>
-                <p className={styles.cardDescription}>Limited to only 20 beachfront villas.</p>
+                <h4 className={styles.featureTitle}>Untouched</h4>
+                <p className={styles.cardDescription}>A coastline that remains wild and pristine.</p>
               </div>
               <div className={styles.featureCard}>
                 <Maximize2 size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                <h4 className={styles.featureTitle}>Spacious</h4>
-                <p className={styles.cardDescription}>Generous erven starting from 1,500m².</p>
+                <h4 className={styles.featureTitle}>Warm Waters</h4>
+                <p className={styles.cardDescription}>Year-round Indian Ocean temperatures.</p>
               </div>
               <div className={styles.featureCard}>
                 <ShieldCheck size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                <h4 className={styles.featureTitle}>Protected</h4>
-                <p className={styles.cardDescription}>Secure estate living with 24/7 security.</p>
+                <h4 className={styles.featureTitle}>Exclusive</h4>
+                <p className={styles.cardDescription}>Low density, no mass tourism.</p>
               </div>
             </div>
-            <Link href="/villas" className={styles.link} style={{ marginTop: '3rem' }}>View The Villas</Link>
+            <p className={styles.paragraph} style={{ marginTop: '2rem', maxWidth: '600px' }}>
+              Mozambique is where raw nature meets future value. Growing international demand meets limited supply.
+            </p>
           </div>
         </ScrollReveal>
       </Section>
 
       <Section background="sand">
         <ScrollReveal>
-          <div className={styles.textColumn} style={{ textAlign: 'center', alignItems: 'center' }}>
-            <span className={styles.sectionTitle}>The Gallery</span>
-            <h3 className={styles.heading}>Life at Island Rock</h3>
-            <div className={styles.galleryGrid}>
-              <div className={styles.galleryItem}>
-                <img src="/images/new-reef-horizon.jpg" alt="Reef Horizon" className={styles.galleryImage} />
-              </div>
-              <div className={styles.galleryItem}>
-                <img src="/images/villa-front-pool.jpg" alt="Villa Pool" className={styles.galleryImage} />
-              </div>
-              <div className={styles.galleryItem}>
-                <img src="/images/aerial-reef.jpg" alt="Aerial View" className={styles.galleryImage} />
-              </div>
-              <div className={styles.galleryItem}>
-                <img src="/images/new-ocean-mood.jpg" alt="Ocean Mood" className={styles.galleryImage} />
-              </div>
+          <div className={styles.introGrid}>
+            <div className={styles.textColumn}>
+              <span className={styles.sectionTitle}>The Vision</span>
+              <h3 className={styles.heading}>A Phased Legacy</h3>
+              <p className={styles.paragraph}>
+                We are building a private coastal sanctuary through a phased development approach that preserves nature.
+                <br /><br />
+                <strong>Phase 1:</strong> Core infrastructure & first exclusive villas.
+                <br />
+                <strong>Future:</strong> Restaurant, spa, pool, diving & marine facilities.
+              </p>
             </div>
-            <Link href="/gallery" className={styles.link} style={{ marginTop: '3rem' }}>View Full Gallery</Link>
+            <div className={styles.imageColumn}>
+              <img src="/images/villa-front-pool.jpg" alt="Villa Concept" className={styles.imagePlaceholder} />
+            </div>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      <Section background="dark">
+        <ScrollReveal>
+          <div className={styles.ctaContainer} style={{ textAlign: 'center', color: 'white' }}>
+            <h2 className={styles.largeStatement} style={{ color: 'white', marginBottom: '2rem' }}>
+              Own a rare coastal position on Africa’s last untouched shoreline.
+            </h2>
+            <Link href="/contact" className={styles.primaryButton}>Enquire Now</Link>
           </div>
         </ScrollReveal>
       </Section>

@@ -7,7 +7,7 @@ interface SectionProps {
     children: React.ReactNode;
     className?: string;
     id?: string;
-    background?: 'sand' | 'white' | 'stone';
+    background?: 'sand' | 'white' | 'stone' | 'dark';
 }
 
 export default function Section({
