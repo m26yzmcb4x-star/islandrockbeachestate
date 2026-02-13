@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
@@ -32,8 +33,14 @@ export default function Home() {
                 <strong>This is not a resort — this is preserved coastal land.</strong>
               </p>
             </div>
-            <div className={styles.imageColumn}>
-              <img src="/images/coastline.jpg" alt="Untouched Coastline" className={styles.imagePlaceholder} />
+            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+              <Image
+                src="/images/coastline.jpg"
+                alt="Untouched Coastline"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </ScrollReveal>
@@ -42,8 +49,14 @@ export default function Home() {
       <Section background="stone">
         <ScrollReveal>
           <div className={styles.introGrid}>
-            <div className={styles.imageColumn}>
-              <div style={{ width: '100%', height: '100%', background: '#333333' }}></div>
+            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+              <Image
+                src="/images/sunset-dunes.jpg"
+                alt="Golden sunset over the dunes"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className={styles.textColumn}>
               <span className={styles.sectionTitle}>The Investment</span>
