@@ -30,7 +30,11 @@ export default function GalleryPage() {
                         '/images/aerial-reef.jpg',
                         '/images/reef-detail.jpg',
                         '/images/villa-front-pool.jpg',
-                        '/images/villa-aerial-topdown.jpg'
+                        '/images/villa-aerial-topdown.jpg',
+                        '/images/terrace-ocean-view.jpg',
+                        '/images/living-room-view.jpg',
+                        '/images/sunset-dunes.jpg',
+                        '/images/interior-sunbeams.jpg'
                     ].map((src, i) => (
                         <div key={i} style={{
                             height: '300px',

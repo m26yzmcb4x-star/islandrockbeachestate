@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { TrendingUp, Globe, Shield } from "lucide-react";
 
 export default function InvestmentPage() {
@@ -17,8 +18,14 @@ export default function InvestmentPage() {
 
             <Section background="white">
                 <div className={styles.introGrid}>
-                    <div className={styles.imageColumn}>
-                        <div style={{ width: '100%', height: '100%', background: '#333333' }}></div>
+                    <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+                        <Image
+                            src="/images/terrace-ocean-view.jpg"
+                            alt="Luxury villa terrace overlooking the Indian Ocean"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                     </div>
                     <div className={styles.textColumn}>
                         <h2 className={styles.heading}>Hybrid Value</h2>
