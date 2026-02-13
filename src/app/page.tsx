@@ -14,11 +14,8 @@ export default function Home() {
         subheadline="Private Coastal Living. Rare Investment Opportunity."
         ctaText="Explore the Estate"
         ctaLink="#lifestyle"
+        videoSrc="/videos/hero-background-optimized.mp4"
       />
-
-      <div className={styles.locationBanner}>
-        Southern Mozambique — Inhambane Province — Jangamo District
-      </div>
 
       <Section id="lifestyle" background="white">
         <ScrollReveal>
@@ -27,6 +24,8 @@ export default function Home() {
               <span className={styles.sectionTitle}>The Lifestyle</span>
               <h3 className={styles.heading}>Untouched Coastal Living</h3>
               <p className={styles.paragraph}>
+                <strong>Southern Mozambique — Inhambane Province — Jangamo District</strong>
+                <br /><br />
                 Wake up to the Indian Ocean in one of Africa’s last untouched coastal regions.
                 Island Rock Estate offers reef-protected waters, pristine beaches, and indigenous dune forests.
                 <br /><br />

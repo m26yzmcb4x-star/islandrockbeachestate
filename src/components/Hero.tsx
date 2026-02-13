@@ -10,6 +10,7 @@ interface HeroProps {
     ctaText?: string;
     ctaLink?: string;
     variant?: 'full' | 'small';
+    videoSrc?: string;
 }
 
 export default function Hero({
@@ -18,6 +19,7 @@ export default function Hero({
     ctaText = "Enquire",
     ctaLink = "/contact",
     variant = "full",
+    videoSrc,
 }: HeroProps) {
     const [offset, setOffset] = useState(0);
 
@@ -31,10 +33,22 @@ export default function Hero({
 
     return (
         <section className={`${styles.hero} ${styles[variant]}`}>
-            <div
-                className={styles.backgroundImage}
-                style={{ transform: `translateY(${offset * 0.5}px)` }}
-            />
+            {videoSrc ? (
+                <video
+                    className={styles.videoBackground}
+                    src={videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ transform: `translateY(${offset * 0.5}px)` }}
+                />
+            ) : (
+                <div
+                    className={styles.backgroundImage}
+                    style={{ transform: `translateY(${offset * 0.5}px)` }}
+                />
+            )}
             <div className={styles.backgroundOverlay} />
             <div className={styles.content}>
                 <h1 className={styles.headline}>{headline}</h1>

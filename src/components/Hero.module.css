@@ -49,6 +49,20 @@
     /* animation: zoom 20s ease infinite alternate; */
 }
 
+.videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    /* Taller to allow for scrolling parallax */
+    top: -10%;
+    /* Center it vertically initially */
+    object-fit: cover;
+    z-index: 0;
+    will-change: transform;
+}
+
 .content {
     position: relative;
     z-index: 2;
