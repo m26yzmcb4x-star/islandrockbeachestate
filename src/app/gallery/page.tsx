@@ -34,7 +34,8 @@ export default function GalleryPage() {
                         '/images/terrace-ocean-view.jpg',
                         '/images/living-room-view.jpg',
                         '/images/sunset-dunes.jpg',
-                        '/images/interior-sunbeams.jpg'
+                        '/images/interior-sunbeams.jpg',
+                        '/images/dusk-pool.png'
                     ].map((src, i) => (
                         <div key={i} style={{
                             height: '300px',
