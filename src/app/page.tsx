@@ -10,11 +10,10 @@ export default function Home() {
   return (
     <main>
       <Hero
-        headline="Island Rock Estate — Mozambique"
+        headline="Island Rock — Mozambique"
         subheadline="Private Coastal Living. Rare Investment Opportunity."
         ctaText="Explore the Estate"
         ctaLink="#lifestyle"
-        videoSrc="/videos/hero-background-optimized.mp4"
       />
 
       <Section id="lifestyle" background="white">
