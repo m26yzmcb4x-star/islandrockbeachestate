@@ -1,0 +1,43 @@
+{
+    "name": "Island Rock - Newsletter Sync",
+    "nodes": [
+        {
+            "parameters": {
+                "path": "newsletter-sync",
+                "responseMode": "lastNode",
+                "options": {}
+            },
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                460,
+                300
+            ],
+            "webhookId": "newsletter-webhook"
+        },
+        {
+            "parameters": {},
+            "name": "Placeholder: Add to Newsletter Provider",
+            "type": "n8n-nodes-base.noOp",
+            "typeVersion": 1,
+            "position": [
+                700,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Placeholder: Add to Newsletter Provider",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

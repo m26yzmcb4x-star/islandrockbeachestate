@@ -8,7 +8,11 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.brandCol}>
                     <Link href="/" className={styles.logo}>
-                        Island Rock
+                        <img
+                            src="/images/logo.svg"
+                            alt="Island Rock Beach Estate"
+                            className={styles.logoImage}
+                        />
                     </Link>
                     <p className={styles.tagline}>
                         A quiet, timeless, accessible-luxury beachfront estate in Jangamo, Mozambique.

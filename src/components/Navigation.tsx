@@ -39,6 +39,14 @@ export default function Navigation() {
         <>
             <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
                 <div className={styles.container}>
+                    <Link href="/" className={styles.logo}>
+                        <img
+                            src="/images/logo.svg"
+                            alt="Island Rock Beach Estate"
+                            className={styles.logoImage}
+                        />
+                    </Link>
+
                     {/* Centered Desktop Menu */}
                     <div className={styles.desktopMenu}>
                         {navLinks.map((link) => (

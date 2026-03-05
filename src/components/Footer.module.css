@@ -22,10 +22,22 @@
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    color: var(--color-sand);
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 80px;
+    /* Adjust based on preference */
+    width: auto;
+    filter: brightness(0) invert(1);
+    /* Since the footer is dark, we make the logo white */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.logoImage:hover {
+    opacity: 1;
 }
 
 .tagline {

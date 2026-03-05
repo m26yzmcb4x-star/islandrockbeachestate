@@ -1,0 +1,51 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&amp;family=Inter:wght@300&amp;display=swap');
+      .logo-text {
+        fill: #FFFFFF;
+      }
+      .logo-main {
+        font-family: 'Cinzel', serif;
+        font-size: 64px;
+        letter-spacing: 0.05em;
+        font-weight: 400;
+        text-anchor: middle;
+      }
+      .logo-sub {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-anchor: end;
+      }
+      .logo-est {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+        text-anchor: start;
+      }
+      .island-icon {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 0.8;
+        stroke-linejoin: round;
+        opacity: 0.9;
+      }
+    </style>
+  </defs>
+  
+  <!-- Est. 2025 (Upper Left) -->
+  <text x="50" y="85" class="logo-text logo-est">Est. 2025</text>
+  
+  <!-- ISLAND ROCK (Centered horizontally) -->
+  <text x="300" y="150" class="logo-text logo-main">ISLAND ROCK</text>
+  
+  <!-- Island Outline Icon (Below Main Text) -->
+  <path class="island-icon" d="M180,180 C190,195 205,210 230,225 C260,240 290,255 330,265 C370,275 420,270 450,250 C475,235 490,215 490,195 C490,180 475,170 445,175 L420,182 C390,190 360,195 330,185 C300,175 270,165 245,155 C220,145 200,150 190,160 Z" transform="translate(0, 10)" />
+  
+  <!-- BEACH ESTATE (Lower Right) -->
+  <text x="550" y="285" class="logo-text logo-sub">BEACH ESTATE</text>
+</svg>

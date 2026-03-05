@@ -1,0 +1,101 @@
+{
+    "name": "Island Rock - Enquiry Capture",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "enquiry",
+                "responseMode": "lastNode",
+                "options": {}
+            },
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                460,
+                300
+            ],
+            "webhookId": "enquiry-webhook"
+        },
+        {
+            "parameters": {},
+            "name": "Auto-Response Email",
+            "type": "n8n-nodes-base.noOp",
+            "typeVersion": 1,
+            "position": [
+                700,
+                200
+            ]
+        },
+        {
+            "parameters": {},
+            "name": "Sales Alert Email",
+            "type": "n8n-nodes-base.noOp",
+            "typeVersion": 1,
+            "position": [
+                700,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "values": {
+                    "string": [
+                        {
+                            "name": "status",
+                            "value": "new"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "name": "Set Status",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 1,
+            "position": [
+                920,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Auto-Response Email",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Sales Alert Email",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Auto-Response Email": {
+            "main": [
+                [
+                    {
+                        "node": "Set Status",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Sales Alert Email": {
+            "main": [
+                [
+                    {
+                        "node": "Set Status",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
