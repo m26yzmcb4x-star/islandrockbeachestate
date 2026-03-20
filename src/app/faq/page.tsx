@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+
+export const metadata: Metadata = {
+    title: "FAQ — Ownership, Investment & Access | Island Rock Beach Estate",
+    description: "Answers to common questions about owning property at Island Rock Beach Estate — access, ownership structures, rental options, and building timelines.",
+    keywords: ["Mozambique property FAQ", "beachfront ownership", "Jangamo access", "property investment questions"],
+};
 
 export default function FAQPage() {
     return (
@@ -66,6 +74,64 @@ export default function FAQPage() {
 
                 </div>
             </Section>
+            <FAQJsonLd />
+            <BreadcrumbJsonLd items={[{ name: 'FAQ', href: '/faq' }]} />
         </main>
+    );
+}
+
+function FAQJsonLd() {
+    const faqData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I get to Island Rock Estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Island Rock Estate remains naturally protected and low-density. Access currently requires a 4x4 vehicle, which preserves our privacy, prevents overdevelopment, and maintains the untouched character of the coastline. Infrastructure improvements form part of the long-term development plan, but for now, the journey ensures seclusion."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where is Jangamo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jangamo is located in the Inhambane Province of Southern Mozambique, situated south of Tofo and Barra. It is known for its pristine beaches, world-class diving reefs, and calm, warm waters."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What type of ownership is offered?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer secure land tenure in accordance with Mozambican law, structured to provide long-term security for international investors. Please contact us for a detailed legal guide on ownership structures."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I rent out my villa?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Island Rock Estate is designed as a hybrid lifestyle-investment destination. Owners have the option to place their villas in a rental pool managed by the estate, generating income when not in personal use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the building timeline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We follow a phased development approach to minimize construction impact on residents. Phase 1 infrastructure is currently underway. Owners typically have a set building window to ensure the estate matures cohesively."
+                }
+            }
+        ]
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+        />
     );
 }

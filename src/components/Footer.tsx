@@ -1,16 +1,48 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    const handleNewsletterSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!email) return;
+
+        setStatus("submitting");
+        try {
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.brandCol}>
                     <Link href="/" className={styles.logo}>
-                        <img
+                        <Image
                             src="/images/logo.svg"
                             alt="Island Rock Beach Estate"
+                            width={160}
+                            height={45}
                             className={styles.logoImage}
                         />
                     </Link>
@@ -43,26 +75,39 @@ export default function Footer() {
                     <p className={styles.tagline} style={{ marginBottom: '1rem' }}>
                         Join our list for exclusive estate updates.
                     </p>
-                    <form className={styles.newsletterForm} action="/contact">
-                        <input
-                            type="email"
-                            placeholder="Email Address"
-                            className={styles.newsletterInput}
-                            required
-                        />
-                        <button type="submit" className={styles.newsletterButton}>
-                            Join
-                        </button>
-                    </form>
+                    {status === "success" ? (
+                        <p className={styles.newsletterSuccess}>✓ Subscribed! We&apos;ll keep you updated.</p>
+                    ) : (
+                        <form className={styles.newsletterForm} onSubmit={handleNewsletterSubmit}>
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                className={styles.newsletterInput}
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button
+                                type="submit"
+                                className={styles.newsletterButton}
+                                disabled={status === "submitting"}
+                            >
+                                {status === "submitting" ? "..." : "Join"}
+                            </button>
+                        </form>
+                    )}
+                    {status === "error" && (
+                        <p className={styles.newsletterError}>Something went wrong. Try again.</p>
+                    )}
                 </div>
             </div>
 
             <div className={styles.bottom}>
                 <div className={styles.socials} style={{ justifyContent: 'center', marginBottom: '1rem' }}>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <a href="https://www.instagram.com/island_rock_estate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram size={20} className={styles.socialIcon} />
                     </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/19U2vXtcWx/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <Facebook size={20} className={styles.socialIcon} />
                     </a>
                 </div>

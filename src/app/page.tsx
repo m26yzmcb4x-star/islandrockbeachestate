@@ -31,12 +31,12 @@ export default function Home() {
                 <strong>This is not a resort — this is preserved coastal land.</strong>
               </p>
             </div>
-            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '500px' }}>
               <Image
-                src="/images/coastline.jpg"
-                alt="Untouched Coastline"
+                src="/images/beach-coastline-sunset.jpg"
+                alt="Panoramic sunset over the Island Rock coastline"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', borderRadius: '4px' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -47,12 +47,12 @@ export default function Home() {
       <Section background="stone">
         <ScrollReveal>
           <div className={styles.introGrid}>
-            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '500px' }}>
               <Image
-                src="/images/sunset-dunes.jpg"
-                alt="Golden sunset over the dunes"
+                src="/images/villa-coastline-aerial.jpg"
+                alt="Aerial view of the villa and pristine coastline"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', borderRadius: '4px' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -114,8 +114,14 @@ export default function Home() {
                 <strong>Future:</strong> Restaurant, spa, pool, diving & marine facilities.
               </p>
             </div>
-            <div className={styles.imageColumn}>
-              <img src="/images/villa-front-pool.jpg" alt="Villa Concept" className={styles.imagePlaceholder} />
+            <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '500px' }}>
+              <Image
+                src="/images/villa-sunset-overview.jpg"
+                alt="The estate at golden hour"
+                fill
+                style={{ objectFit: 'cover', borderRadius: '4px' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </ScrollReveal>

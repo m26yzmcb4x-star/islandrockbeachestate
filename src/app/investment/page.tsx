@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import Link from "next/link";
 import Image from "next/image";
 import { TrendingUp, Globe, Shield } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Investment Opportunity | Island Rock Beach Estate, Mozambique",
+    description: "Secure a rare beachfront investment in Jangamo, Mozambique. Villas from R4m–R10m with capital growth, rental potential, and legacy value.",
+    keywords: ["Mozambique investment", "beachfront property investment", "Jangamo villas", "Africa real estate investment", "coastal property"],
+};
 
 export default function InvestmentPage() {
     return (
@@ -82,6 +90,7 @@ export default function InvestmentPage() {
                     </div>
                 </div>
             </Section>
+            <BreadcrumbJsonLd items={[{ name: 'Investment', href: '/investment' }]} />
         </main>
     );
 }

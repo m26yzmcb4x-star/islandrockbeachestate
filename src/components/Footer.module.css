@@ -137,6 +137,20 @@
     background: var(--color-white);
 }
 
+.newsletterSuccess {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #8fbc8f;
+    margin-top: 0.5rem;
+}
+
+.newsletterError {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #e88;
+    margin-top: 0.5rem;
+}
+
 .bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;

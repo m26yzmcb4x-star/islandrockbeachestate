@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Navigation.module.css";
 import { Menu, X } from "lucide-react";
@@ -40,10 +41,13 @@ export default function Navigation() {
             <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
                 <div className={styles.container}>
                     <Link href="/" className={styles.logo}>
-                        <img
+                        <Image
                             src="/images/logo.svg"
                             alt="Island Rock Beach Estate"
+                            width={180}
+                            height={50}
                             className={styles.logoImage}
+                            priority
                         />
                     </Link>
 

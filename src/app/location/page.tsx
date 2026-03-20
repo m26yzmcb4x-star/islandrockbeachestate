@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+
+export const metadata: Metadata = {
+    title: "Location — Jangamo, Inhambane | Island Rock Beach Estate",
+    description: "Discover Jangamo, Inhambane Province — a pristine reef-protected bay on Mozambique's southern coast. Remote enough to be wild, accessible enough for regular visits.",
+    keywords: ["Jangamo Mozambique", "Inhambane property", "reef-protected beach", "Mozambique coast", "beachfront location"],
+};
 
 export default function LocationPage() {
     return (
@@ -23,8 +33,14 @@ export default function LocationPage() {
                             yet accessible enough for regular visits.
                         </p>
                     </div>
-                    <div className={styles.imageColumn}>
-                        <img src="/images/shipwreck.jpg" alt="Shipwreck landmark" className={styles.imagePlaceholder} />
+                    <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+                        <Image
+                            src="/images/shipwreck.jpg"
+                            alt="Historic shipwreck landmark near Island Rock Beach Estate"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                     </div>
                 </div>
             </Section>
@@ -38,6 +54,17 @@ export default function LocationPage() {
                     </p>
                 </div>
             </Section>
+
+            <Section background="dark">
+                <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'white' }}>
+                    <h2 className={styles.heading} style={{ color: 'white', marginBottom: '1.5rem' }}>Discover Jangamo for Yourself</h2>
+                    <p className={styles.paragraph} style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto 2rem auto' }}>
+                        Get in touch to learn more about the location and arrange a site visit.
+                    </p>
+                    <Link href="/contact" className={styles.primaryButton}>Enquire Now</Link>
+                </div>
+            </Section>
+            <BreadcrumbJsonLd items={[{ name: 'Location', href: '/location' }]} />
         </main>
     );
 }

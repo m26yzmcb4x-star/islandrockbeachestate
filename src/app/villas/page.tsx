@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { getPageContent } from "@/lib/cms";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+
+export const metadata: Metadata = {
+    title: "The Villas | Island Rock Beach Estate, Mozambique",
+    description: "Explore 20 exclusive beachfront villas at Island Rock. Architecturally designed for coastal living with natural materials and ocean views.",
+    keywords: ["Mozambique villas", "beachfront villas", "Jangamo villas", "luxury villa design", "coastal architecture"],
+};
 
 export default async function VillasPage() {
     const data = await getPageContent('villas');
@@ -23,11 +32,13 @@ export default async function VillasPage() {
 
             <Section background="white">
                 <div className={styles.introGrid}>
-                    <div className={styles.imageColumn}>
-                        <img
+                    <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
+                        <Image
                             src={data.intro_image}
-                            alt="Lecture villa"
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            alt="Architecturally designed villa at Island Rock Beach Estate"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
                     <div className={styles.textColumn}>
@@ -55,6 +66,7 @@ export default async function VillasPage() {
                     </div>
                 </div>
             </Section>
+            <BreadcrumbJsonLd items={[{ name: 'The Villas', href: '/villas' }]} />
         </main>
     );
 }

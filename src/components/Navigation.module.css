@@ -14,7 +14,7 @@
     background: rgba(245, 241, 232, 0.95);
     /* Sand color with opacity */
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     color: var(--color-charcoal);
 }
@@ -33,17 +33,17 @@
 }
 
 .logoImage {
-    height: 60px;
+    height: 120px;
     width: auto;
-    transition: height 0.3s ease, filter 0.3s ease;
+    transition: all 0.3s ease;
     filter: brightness(0) invert(1);
-    /* Initial state on transparent/dark hero */
+    /* Makes logo white by default */
 }
 
 .nav.scrolled .logoImage {
-    height: 50px;
-    filter: none;
-    /* Return to original colors (or charcoal) when scrolled on light background */
+    height: 75px;
+    filter: brightness(0);
+    /* Makes logo black when scrolled */
 }
 
 .container {
