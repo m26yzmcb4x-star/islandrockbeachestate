@@ -54,7 +54,7 @@ export default async function VillasPage() {
                 <div className={styles.container}>
                     <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>{data.features_title}</h3>
                     <div className={styles.featuresGrid}>
-                        {data.features && data.features.map((feature: any, index: number) => (
+                        {data.features && data.features.map((feature: { title: string; description: string }, index: number) => (
                             <div key={index} className={styles.featureCard}>
                                 <h4 className={styles.featureTitle}>{feature.title}</h4>
                                 <p>{feature.description}</p>

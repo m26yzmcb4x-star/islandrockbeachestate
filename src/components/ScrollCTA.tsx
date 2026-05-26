@@ -7,15 +7,14 @@ import { X } from "lucide-react";
 
 export default function ScrollCTA() {
     const [isVisible, setIsVisible] = useState(false);
-    const [isDismissed, setIsDismissed] = useState(false);
+    const [isDismissed, setIsDismissed] = useState(() => {
+        if (typeof window !== "undefined") {
+            return !!sessionStorage.getItem("cta_dismissed");
+        }
+        return false;
+    });
 
     useEffect(() => {
-        // Check if already dismissed this session
-        if (sessionStorage.getItem("cta_dismissed")) {
-            setIsDismissed(true);
-            return;
-        }
-
         const handleScroll = () => {
             // Show after scrolling 60% of the page
             const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;

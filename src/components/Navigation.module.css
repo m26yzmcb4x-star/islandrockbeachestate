@@ -55,7 +55,13 @@
     padding: 0 2rem;
     position: relative;
     height: 100px;
+    transition: height 0.3s ease;
 }
+
+.nav.scrolled .container {
+    height: 70px;
+}
+
 
 
 
@@ -187,7 +193,7 @@
     color: var(--color-sand);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .rightCta {
         display: none;
     }
@@ -233,7 +239,7 @@
     visibility: visible;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1151px) {
     .mobileMenu {
         display: none;
     }
@@ -256,7 +262,7 @@
     text-transform: capitalize;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .container {
         justify-content: space-between;
         height: 70px;
@@ -268,5 +274,30 @@
 
     .menuButton {
         display: block;
+    }
+}
+
+/* Mid-range desktop layout scaling */
+@media (min-width: 1151px) and (max-width: 1350px) {
+    .desktopMenu {
+        gap: 1.2rem;
+    }
+    
+    .link {
+        font-size: 0.8rem;
+        letter-spacing: 0.03em;
+    }
+    
+    .logoImage {
+        height: 90px;
+    }
+    
+    .nav.scrolled .logoImage {
+        height: 65px;
+    }
+    
+    .rightCta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
     }
 }

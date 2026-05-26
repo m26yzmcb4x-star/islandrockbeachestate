@@ -3,8 +3,11 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
+import locationStyles from "./location.module.css";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import GoogleMap from "@/components/GoogleMap";
+import { Plane, Car, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Location — Jangamo, Inhambane | Island Rock Beach Estate",
@@ -55,6 +58,55 @@ export default function LocationPage() {
                 </div>
             </Section>
 
+            {/* Map Integration Section */}
+            <section id="map" className={locationStyles.mapSection}>
+                <div className="container">
+                    <div className={locationStyles.mapHeader}>
+                        <h2 className={locationStyles.mapTitle}>Find Your Paradise</h2>
+                        <p className={locationStyles.mapSubtitle}>
+                            Located approximately 400km north of Maputo and 25km south of Inhambane. 
+                            Use our interactive map to explore the estate and plan your journey.
+                        </p>
+                    </div>
+                    
+                    <div className={locationStyles.grid}>
+                        <div>
+                            <GoogleMap />
+                        </div>
+                        <div className={locationStyles.infoCard}>
+                            <h3 className={locationStyles.cardTitle}>Access Details</h3>
+                            <ul className={locationStyles.travelList}>
+                                <li className={locationStyles.travelItem}>
+                                    <span className={locationStyles.travelMethod}>
+                                        <Plane size={18} /> By Air
+                                    </span>
+                                    <span className={locationStyles.travelDesc}>
+                                        Regular flights connect Johannesburg (ORT) and Maputo directly to Inhambane Airport (INH), located just 40 minutes from the estate.
+                                    </span>
+                                </li>
+                                <li className={locationStyles.travelItem}>
+                                    <span className={locationStyles.travelMethod}>
+                                        <Car size={18} /> By Road
+                                    </span>
+                                    <span className={locationStyles.travelDesc}>
+                                        A scenic drive from Maputo along the EN1 highway. A 4x4 vehicle is required for the final 12km sandy track leading directly to the beachfront.
+                                    </span>
+                                </li>
+                                <li className={locationStyles.travelItem}>
+                                    <span className={locationStyles.travelMethod}>
+                                        <MapPin size={18} /> Coordinates
+                                    </span>
+                                    <span className={locationStyles.travelDesc} style={{ fontFamily: 'monospace', fontSize: '0.85rem' }}>
+                                        {"24°08'52.8\"S 35°28'59.1\"E"}<br />
+                                        (-24.14801, 35.48309)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <Section background="dark">
                 <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'white' }}>
                     <h2 className={styles.heading} style={{ color: 'white', marginBottom: '1.5rem' }}>Discover Jangamo for Yourself</h2>
@@ -68,3 +120,4 @@ export default function LocationPage() {
         </main>
     );
 }
+

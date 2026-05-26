@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Navigation.module.css";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -21,9 +21,6 @@ export default function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-        setIsMobileOpen(false);
-    }, [pathname]);
 
     // Combined nav links for consistency
     const navLinks = [
@@ -88,12 +85,22 @@ export default function Navigation() {
                 </button>
 
                 {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} className={styles.mobileLink}>
+                    <Link 
+                        key={link.href} 
+                        href={link.href} 
+                        className={styles.mobileLink}
+                        onClick={() => setIsMobileOpen(false)}
+                    >
                         {link.name}
                     </Link>
                 ))}
                 {/* Enquire in mobile menu as well */}
-                <Link href="/contact" className={styles.mobileLink} style={{ marginTop: '1rem', textDecoration: 'underline' }}>
+                <Link 
+                    href="/contact" 
+                    className={styles.mobileLink} 
+                    style={{ marginTop: '1rem', textDecoration: 'underline' }}
+                    onClick={() => setIsMobileOpen(false)}
+                >
                     Enquire
                 </Link>
             </div>

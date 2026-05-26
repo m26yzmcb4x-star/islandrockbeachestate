@@ -41,7 +41,7 @@ export default function ContactPage() {
                 setStatus("error");
                 setErrorMessage(data.message || "Failed to send message. Please try again.");
             }
-        } catch (error) {
+        } catch {
             setStatus("error");
             setErrorMessage("An unexpected error occurred.");
         }

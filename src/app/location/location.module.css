@@ -1,0 +1,95 @@
+.mapSection {
+    padding: 6rem 0;
+    background: var(--color-white);
+}
+
+.mapHeader {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.mapTitle {
+    font-family: var(--font-heading), serif;
+    font-size: 2.2rem;
+    color: var(--color-charcoal);
+    margin-bottom: 1rem;
+}
+
+.mapSubtitle {
+    font-family: var(--font-body), sans-serif;
+    font-size: 1.1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.infoCard {
+    background: var(--color-sand);
+    padding: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.cardTitle {
+    font-family: var(--font-heading), serif;
+    font-size: 1.5rem;
+    color: var(--color-charcoal);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 0.8rem;
+}
+
+.travelList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.travelItem {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.travelItem:last-child {
+    margin-bottom: 0;
+}
+
+.travelMethod {
+    font-family: var(--font-body), sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-ocean);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.travelDesc {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .mapSection {
+        padding: 4rem 0;
+    }
+}
