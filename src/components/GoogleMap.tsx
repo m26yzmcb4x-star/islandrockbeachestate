@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MapPin } from "lucide-react";
 import styles from "./GoogleMap.module.css";
 
 declare global {
@@ -163,42 +162,17 @@ export default function GoogleMap() {
         };
     }, [apiKey]);
 
-    // Render interactive Leaflet/OpenStreetMap fallback if API Key is not set or failed to load
     if (!apiKey || mapError) {
         return (
             <div className={styles.mapWrapper}>
                 <iframe
-                    title="Island Rock Location Map (Interactive Fallback)"
+                    title="Island Rock Beach Estate — Jangamo, Inhambane, Mozambique"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=35.460%2C-24.162%2C35.506%2C-24.132&layer=mapnik&marker=-24.14801%2C35.48309"
                     className={styles.mapContainer}
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                 />
-                
-                <div className={styles.fallbackContainer}>
-                    <div className={styles.overlay}>
-                        <div className={styles.iconWrapper}>
-                            <MapPin size={48} strokeWidth={1.5} />
-                        </div>
-                        <h3 className={styles.title}>Google Maps Integration</h3>
-                        <p className={styles.description}>
-                            To enable custom styled map views, premium route plotting, and detailed satellite imagery, 
-                            please set up your Google Maps API Key in your workspace.
-                        </p>
-                        <div className={styles.instructions}>
-                            NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
-                        </div>
-                        <a 
-                            href="https://developers.google.com/maps/documentation/javascript/get-api-key"
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={styles.ctaButton}
-                        >
-                            Get API Key
-                        </a>
-                    </div>
-                </div>
             </div>
         );
     }
