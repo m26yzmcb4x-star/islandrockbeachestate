@@ -24,13 +24,14 @@ export default function Navigation() {
 
     // Combined nav links for consistency
     const navLinks = [
-        { name: "The Estate", href: "/" }, // Changed from /estate to / to match previous desktop structure acting as Home
+        { name: "The Estate", href: "/" },
         { name: "Location", href: "/location" },
         { name: "The Villas", href: "/villas" },
         { name: "Lifestyle", href: "/lifestyle" },
         { name: "Investment", href: "/investment" },
-        { name: "FAQ", href: "/faq" },
         { name: "Gallery", href: "/gallery" },
+        { name: "Insights", href: "/blog" },
+        { name: "FAQ", href: "/faq" },
     ];
 
     return (

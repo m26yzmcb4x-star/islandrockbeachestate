@@ -1,0 +1,22 @@
+---
+title: "What Does a Beachfront Villa in Inhambane Actually Cost in 2025?"
+slug: "beachfront-villa-inhambane-cost-2025"
+date: "2025-02-25"
+author: "Island Rock Estate"
+excerpt: "Prices for Mozambique beachfront property vary enormously depending on location, completeness, and how you buy. Here is a realistic picture of what the market looks like in 2025."
+readTime: "5 min read"
+coverImage: "/images/villa-coastline-aerial.jpg"
+sections:
+  - heading: "The Inhambane Market in 2025"
+    content: "The Inhambane Province — which includes Tofo, Barra, Paindane, and Jangamo — is the primary market for South African buyers of Mozambique beachfront property. It offers the combination of reef-protected swimming, good flight connections (Inhambane Airport is 4 hours from Johannesburg by air), and enough established infrastructure to make ownership practical. Prices across the province reflect a wide range: from under R2 million for a small plot with basic structure, to R15 million or more for completed, fully fitted luxury villas in the best positions."
+  - heading: "What R4 Million Buys You"
+    content: "At the R4–5 million entry level, you are typically looking at: off-plan villas in emerging developments (3 bedrooms, 200–250m², ocean views), completed basic structures on smaller plots in less prime positions, or land-only in well-located areas. At Island Rock, the R4 million entry point gives you a 3-bedroom villa (240m²) on a 600m² plot with ocean views, pool, and full spec — off-plan pricing that reflects the early-stage nature of the development."
+  - heading: "What R6–8 Million Buys You"
+    content: "In this range, you start accessing direct beachfront positions. At Island Rock, R6.5 million buys a 4-bedroom, 310m² villa on direct beachfront. In the resale market around Tofo and Barra, the same budget can buy completed villas but typically on smaller plots or with older finishes. The off-plan advantage is that you are buying new build, spec-designed for the coastal environment, at development pricing rather than resale markup."
+  - heading: "What R9 Million and Above Buys"
+    content: "Above R9 million, you are in prime beachfront territory — corner plots, larger homes, and established holiday rental businesses with proven income history. At Island Rock, R9 million buys the largest 5-bedroom configuration (380m²) on a prime corner beachfront plot. The comparable established market for this spec in Tofo would typically exceed R12–15 million, reflecting Island Rock's off-plan early-stage pricing."
+  - heading: "Off-Plan vs Completed — The Risk Tradeoff"
+    content: "Off-plan pricing offers the best entry point, but carries development risk. The question to ask before buying off-plan in any Mozambique development is: who are the developers, what is their track record, what is the legal land holding status (DUAT), and what is the payment structure? Island Rock's Investment Brief answers all of these questions directly, including legal documentation. Buying completed property is lower risk but commands a significant premium over off-plan."
+  - heading: "What to Watch Out For"
+    content: "Not all Mozambique property listings are equal. Key risks include: developments without a valid DUAT on the land parcel; developers without a track record; unclear ownership structures; and sites with access or infrastructure problems that are not disclosed upfront. The Inhambane market has seen failed developments where buyers lost deposits. Due diligence on the developer and the land title is non-negotiable. Always engage a Mozambican attorney to verify the DUAT before committing."
+---

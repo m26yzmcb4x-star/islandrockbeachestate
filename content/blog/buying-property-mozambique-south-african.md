@@ -1,0 +1,22 @@
+---
+title: "Buying Property in Mozambique as a South African — What You Need to Know"
+slug: "buying-property-mozambique-south-african"
+date: "2025-04-10"
+author: "Island Rock Estate"
+excerpt: "South Africans are among the biggest buyers of beachfront property in Mozambique — but the legal framework is different to what you know at home. Here is a plain-language guide to how ownership works."
+readTime: "6 min read"
+coverImage: "/images/beach-coastline-sunset.jpg"
+sections:
+  - heading: "Mozambique Does Not Have Freehold"
+    content: "The first thing to understand is that Mozambique operates under a different land system to South Africa. All land in Mozambique is constitutionally owned by the state — there is no freehold title as SA buyers know it. Instead, you acquire a DUAT (Direito de Uso e Aproveitamento da Terra): a formally registered right to use and develop a specific piece of land."
+  - heading: "What Is a DUAT and How Does It Work?"
+    content: "A DUAT is a 50-year renewable right granted by the Mozambican state. It is fully transferable (you can sell it), heritable (it passes to your estate), and bankable (Mozambican banks accept it as collateral for financing). In practice, a well-structured DUAT functions very similarly to a title deed for the purposes of ownership security. The key difference is that it is registered as a right of use, not absolute ownership of the land itself."
+  - heading: "How Foreign Nationals Buy — The Lda Structure"
+    content: "Foreign nationals, including South Africans, cannot hold a DUAT directly in their personal names. The standard and legally established route is to hold your DUAT through a Mozambican-registered company, known as a Lda (Limitada — the equivalent of a private company). The company is registered in Mozambique, holds the DUAT, and you own the company. This structure is widely used, legally straightforward, and gives you full control of the asset. The Island Rock legal team assists every buyer through this process."
+  - heading: "Costs and Taxes to Budget For"
+    content: "Beyond the purchase price, buyers should budget for: company registration costs (approximately USD 800–1 500 with a local attorney); DUAT transfer fees (set by government, typically 0.3–0.5% of assessed land value); SARS tax clearance for transferring rands out of South Africa under your annual foreign investment allowance; and annual property rates to the local municipality. There is no transfer duty equivalent at the levels charged in South Africa."
+  - heading: "Moving Money Across the Border"
+    content: "South African residents can transfer up to R10 million per calendar year offshore under the SARS individual foreign investment allowance without special motivation (amounts above this require SARS approval). Most buyers at Island Rock use this allowance. Your SA bank arranges the forex and transfer directly to a Mozambican attorney's trust account. We recommend engaging both a Mozambican attorney and a South African tax advisor early in the process."
+  - heading: "How We Help"
+    content: "Island Rock Estate works with experienced Mozambican legal advisors who handle DUAT registration, company formation, and transfer administration on behalf of buyers. Our Investment Brief includes a step-by-step legal guide. Contact us to receive it or to arrange a call with our team to walk through the process for your specific situation."
+---

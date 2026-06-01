@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Location — Jangamo, Inhambane | Island Rock Beach Estate",
     description: "Discover Jangamo, Inhambane Province — a pristine reef-protected bay on Mozambique's southern coast. Remote enough to be wild, accessible enough for regular visits.",
     keywords: ["Jangamo Mozambique", "Inhambane property", "reef-protected beach", "Mozambique coast", "beachfront location"],
+    openGraph: { url: "https://islandrockestate.com/location" },
 };
 
 export default function LocationPage() {
@@ -64,11 +65,11 @@ export default function LocationPage() {
                     <div className={locationStyles.mapHeader}>
                         <h2 className={locationStyles.mapTitle}>Find Your Paradise</h2>
                         <p className={locationStyles.mapSubtitle}>
-                            Located approximately 400km north of Maputo and 25km south of Inhambane. 
+                            Located approximately 400km north of Maputo and 25km south of Inhambane.
                             Use our interactive map to explore the estate and plan your journey.
                         </p>
                     </div>
-                    
+
                     <div className={locationStyles.grid}>
                         <div>
                             <GoogleMap />
@@ -120,4 +121,3 @@ export default function LocationPage() {
         </main>
     );
 }
-

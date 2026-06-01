@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "The Estate | Island Rock Beach Estate, Mozambique",
     description: "A private, reef-protected beachfront estate in Jangamo, Mozambique. 20 exclusive villas designed for quiet, timeless accessible luxury.",
     keywords: ["Island Rock Estate", "Mozambique beachfront", "private estate", "luxury coastal development", "Jangamo estate"],
+    openGraph: { url: "https://islandrockestate.com/estate" },
 };
 
 export default async function EstatePage() {
@@ -60,6 +61,69 @@ export default async function EstatePage() {
                                 <p>{feature.description}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Developer Credibility */}
+            <Section background="white">
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <span className={styles.sectionTitle} style={{ display: 'block', marginBottom: '0.5rem' }}>The People Behind It</span>
+                    <h3 className={styles.heading} style={{ marginBottom: '3rem' }}>The Developers</h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            <div style={{
+                                width: '72px',
+                                height: '72px',
+                                borderRadius: '50%',
+                                background: 'var(--color-stone)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontFamily: 'var(--font-heading)',
+                                fontSize: '1.5rem',
+                                color: 'var(--color-charcoal)',
+                                flexShrink: 0,
+                            }}>F</div>
+                            <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', margin: 0 }}>Fritz</h4>
+                            <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.6, margin: 0 }}>Development &amp; Sales — South Africa</p>
+                            <p className={styles.paragraph} style={{ fontSize: '0.95rem' }}>
+                                Fritz leads the Island Rock vision — from the initial land acquisition through to sales
+                                and investor relations. He brings deep experience in coastal property development and
+                                a long-standing passion for southern Mozambique's coastline.
+                            </p>
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.85rem' }}>
+                                <a href="tel:+27824564103" style={{ color: 'inherit' }}>+27 82 456 4103</a>
+                                <a href="mailto:fritz@islandrockestate.com" style={{ color: 'inherit' }}>fritz@islandrockestate.com</a>
+                            </div>
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            <div style={{
+                                width: '72px',
+                                height: '72px',
+                                borderRadius: '50%',
+                                background: 'var(--color-stone)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontFamily: 'var(--font-heading)',
+                                fontSize: '1.5rem',
+                                color: 'var(--color-charcoal)',
+                                flexShrink: 0,
+                            }}>S</div>
+                            <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', margin: 0 }}>Shane</h4>
+                            <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.6, margin: 0 }}>Operations &amp; Site — Mozambique</p>
+                            <p className={styles.paragraph} style={{ fontSize: '0.95rem' }}>
+                                Shane is on the ground in Mozambique, managing site operations, local authority
+                                relations, and construction oversight. His years of experience in-country ensure
+                                the project moves with the realities of the region.
+                            </p>
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.85rem' }}>
+                                <a href="tel:+258850627916" style={{ color: 'inherit' }}>+258 85 062 7916</a>
+                                <a href="mailto:shane@islandrockestate.com" style={{ color: 'inherit' }}>shane@islandrockestate.com</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Section>

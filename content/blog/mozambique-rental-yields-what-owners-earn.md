@@ -1,0 +1,22 @@
+---
+title: "Mozambique Rental Yields — What Owners Actually Earn"
+slug: "mozambique-rental-yields-what-owners-earn"
+date: "2025-01-30"
+author: "Island Rock Estate"
+excerpt: "Rental income from a Mozambique beachfront villa can be significant — but the numbers are often overstated in marketing materials. Here is a realistic breakdown of what well-run villas actually earn."
+readTime: "6 min read"
+coverImage: "/images/terrace-ocean-view.jpg"
+sections:
+  - heading: "The Mozambique Holiday Rental Market"
+    content: "Mozambique has a growing but still boutique holiday rental market. The bulk of demand comes from South African travellers and ex-pats, with a smaller but growing international market from Europe and the Middle East. Unlike Bali or Cape Verde, Mozambique is not yet a mass international tourist destination — which means rental seasons are more concentrated, peak rates are high, and the off-season can be very quiet. Understanding this structure is critical to building a realistic financial model."
+  - heading: "Peak vs Off-Season"
+    content: "Mozambique's main holiday season runs from November through April — the southern hemisphere summer. South African school holidays (December-January and Easter) represent the absolute peak, with rates 20–40% above the broader season average. The low season (May–September) sees significantly reduced occupancy; cyclone season (January–March) creates some uncertainty but coincides with the school holiday peak that most SA families are already committed to. A well-managed villa in a good location might achieve 90–110 booked nights in the peak season and 20–40 nights in shoulder and off-season."
+  - heading: "Nightly Rates — What the Market Supports"
+    content: "For a well-positioned 3–4 bedroom beachfront villa with pool in the Inhambane region: peak season (Dec-Jan school holidays) rates run USD 400–600 per night; shoulder peak (November, February-April) runs USD 250–380 per night; and off-season bookings (if any) typically come in at USD 150–200 per night. Total annual gross rental for a consistently well-marketed villa: USD 30 000–55 000 (approximately R560 000–R1 000 000 at current rates). A 5-bedroom villa with a strong track record can exceed this range."
+  - heading: "What Estate Management Costs"
+    content: "If you place your villa in an estate-managed rental pool (as Island Rock offers), expect a management fee of 20–30% of gross rental income. This covers marketing, booking management, cleaning, maintenance coordination, and guest services. Net yield after management fees on a R4 million villa earning R600 000 gross: approximately R420 000–480 000 net, representing 10–12% net yield. This compares favourably with SA buy-to-let (typically 4–7% net), though with different risk and liquidity profiles."
+  - heading: "The Variables That Move the Numbers"
+    content: "Several factors significantly affect actual rental income: villa quality and finishes (high-spec consistently outperforms basic); marketing platform presence (Airbnb, Booking.com, Villarenters, direct SA networks); estate-level amenities (pool, restaurant, security — shared facilities drive higher rates); management quality (guest experience drives reviews which drive future bookings); and accessibility (4x4 access limits some markets but also self-selects higher-spending guests). The Island Rock rental pool is designed to optimise all of these variables collectively."
+  - heading: "Our Recommendation"
+    content: "We publish an illustrative financial model in our Investment Brief that shows conservative, base case, and optimistic scenarios for rental income by villa type. The model is based on comparable Inhambane villa data, not aspirational projections. Request the brief through our website, or contact us directly to discuss the financial case for your specific villa preference."
+---

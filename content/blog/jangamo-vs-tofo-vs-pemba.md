@@ -1,0 +1,22 @@
+---
+title: "Jangamo vs Tofo vs Pemba — Where to Buy in Mozambique"
+slug: "jangamo-vs-tofo-vs-pemba"
+date: "2025-03-18"
+author: "Island Rock Estate"
+excerpt: "Mozambique has more than 2 500 km of Indian Ocean coastline. But not all of it is equal for property investment. We compare three of the most talked-about destinations for South African buyers."
+readTime: "5 min read"
+coverImage: "/images/aerial-reef.jpg"
+sections:
+  - heading: "The Big Three — What You Are Choosing Between"
+    content: "When South African property investors look at Mozambique, three destinations dominate the conversation: Tofo (established, accessible, well-known), Pemba (remote, developing, high upside), and Jangamo (the emerging alternative to Tofo — wilder, lower-density, and increasingly sought-after). Each appeals to a different type of buyer."
+  - heading: "Tofo — The Established Choice"
+    content: "Tofo Beach, near Inhambane town, is the most developed and well-known destination in southern Mozambique. It has established restaurants, dive operators, and regular flight connections from Johannesburg via the Inhambane Airport. Prices reflect this maturity — beachfront land and completed villas are significantly more expensive than comparable positions in Jangamo or Pemba. The upside of capital growth is more limited because the market is more mature. For buyers who want established infrastructure and a proven tourism economy, Tofo is the safe choice."
+  - heading: "Pemba — The High-Risk, High-Reward North"
+    content: "Pemba, in Cabo Delgado province in northern Mozambique, has drawn significant investor interest over the past decade, partly driven by LNG infrastructure development in the region. Entry prices have historically been lower than southern Mozambique, and the potential upside is significant if and when the north stabilises and develops. However, security concerns in parts of Cabo Delgado have cooled investor sentiment and created real uncertainty. Pemba is a market for sophisticated, long-horizon investors with a high risk tolerance."
+  - heading: "Jangamo — The Emerging Position"
+    content: "Jangamo is directly south of Tofo, in the same Inhambane Province, sharing the same reef system and Indian Ocean conditions. The key difference is density. Jangamo has seen significantly less development than Tofo, and access still requires a 4x4 — which has historically limited mass tourism. This is precisely what makes it attractive for a certain type of buyer: those who want wild, private coastline at prices that reflect today's limited infrastructure rather than tomorrow's potential. Island Rock is one of the first formal residential developments in the area, which means early buyers are positioning at ground level."
+  - heading: "What Does This Mean for Investment?"
+    content: "Tofo offers stability and proven rental income, at a premium price. Pemba offers dramatic upside, with real risk. Jangamo sits between the two — offering the natural environment and accessibility of Inhambane Province, with pricing and scarcity more reminiscent of early Tofo. For SA investors with a 5–10 year horizon, Jangamo's combination of location, reef access, and low-density positioning is compelling."
+  - heading: "The Bottom Line"
+    content: "Where you buy depends on your risk profile, budget, and what you are optimising for — lifestyle, income, or capital growth. For buyers who want beachfront access in Inhambane at off-plan prices, with serious long-term appreciation potential, Jangamo deserves serious consideration. Contact us for a copy of our Investment Brief, which includes a full location comparison and pricing analysis."
+---

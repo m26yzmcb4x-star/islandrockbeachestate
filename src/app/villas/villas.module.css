@@ -1,0 +1,144 @@
+.villaRow {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.floorPlanBox {
+    flex: 1;
+    min-width: 0;
+}
+
+.floorPlanPlaceholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--color-stone, #e8e0d4);
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.floorPlanLabel {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-charcoal);
+    letter-spacing: 0.05em;
+}
+
+.floorPlanSub {
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.floorPlanNote {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+.villaSpecs {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.statRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+}
+
+.stat strong {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-charcoal);
+}
+
+.stat span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+}
+
+.specList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1.5rem;
+}
+
+.specList li {
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.specList li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-green, #4A6C6F);
+    font-size: 0.8rem;
+}
+
+.priceRow {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.priceFrom {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+}
+
+.price {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-charcoal);
+}
+
+@media (max-width: 900px) {
+    .villaRow {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+
+    .statRow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specList {
+        grid-template-columns: 1fr;
+    }
+}

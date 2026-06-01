@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Coastal Lifestyle | Island Rock Beach Estate, Mozambique",
     description: "Experience untouched coastal living in Jangamo. Swimming, snorkeling, fishing, dune walks, and quiet moments by the Indian Ocean.",
     keywords: ["Mozambique lifestyle", "coastal living", "Jangamo activities", "Indian Ocean", "beach lifestyle"],
+    openGraph: { url: "https://islandrockestate.com/lifestyle" },
 };
 
 export default function LifestylePage() {

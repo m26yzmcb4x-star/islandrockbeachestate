@@ -16,6 +16,12 @@ export default function Home() {
         ctaLink="#lifestyle"
       />
 
+      {/* Update VILLAS_REMAINING when a villa is reserved */}
+      <div style={{ background: 'var(--color-charcoal)', color: 'white', textAlign: 'center', padding: '0.85rem 2rem', fontSize: '0.78rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+        Phase 1 &nbsp;·&nbsp; 20 Villas &nbsp;·&nbsp; <strong>16 of 20 remaining</strong> &mdash;{' '}
+        <Link href="/villas" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>View availability</Link>
+      </div>
+
       <Section id="lifestyle" background="white">
         <ScrollReveal>
           <div className={styles.introGrid}>

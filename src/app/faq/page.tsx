@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "FAQ — Ownership, Investment & Access | Island Rock Beach Estate",
     description: "Answers to common questions about owning property at Island Rock Beach Estate — access, ownership structures, rental options, and building timelines.",
     keywords: ["Mozambique property FAQ", "beachfront ownership", "Jangamo access", "property investment questions"],
+    openGraph: { url: "https://islandrockestate.com/faq" },
 };
 
 export default function FAQPage() {
