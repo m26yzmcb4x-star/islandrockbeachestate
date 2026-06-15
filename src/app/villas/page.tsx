@@ -24,61 +24,64 @@ const villaTypes = [
         id: "A",
         label: "Villa Type A",
         bedrooms: 3,
-        bathrooms: 2,
+        bathrooms: 3,
         livingArea: 240,
         plotSize: 600,
         priceFrom: "R4 000 000",
+        priceTo: "R6 000 000",
         position: "Garden & Ocean View",
+        targetBuyer: "Ideal for couples or small families — and highly optimised for the holiday rental market.",
         specs: [
-            "Private plunge pool",
-            "High thatch ceiling",
-            "Open-plan living & dining",
-            "Ocean-facing covered deck",
+            "Master ensuite + 2 further bedrooms (1 ensuite)",
+            "Open-plan living / dining / kitchen",
+            "Private pool (4×6 m)",
+            "Ocean-facing wraparound deck",
             "Outdoor shower",
-            "Staff quarters",
+            "High thatch ceiling",
+            "Natural materials throughout",
         ],
-        floorPlan: "/images/floorplan-villa-a.jpg",
     },
     {
         id: "B",
         label: "Villa Type B",
-        bedrooms: 4,
-        bathrooms: 3,
-        livingArea: 310,
-        plotSize: 800,
-        priceFrom: "R6 500 000",
+        bedrooms: 2,
+        bathrooms: 2,
+        livingArea: 140,
+        plotSize: 400,
+        priceFrom: "R4 000 000",
+        priceTo: "R5 000 000",
         position: "Direct Beachfront",
+        targetBuyer: "The lock-up-and-go investment villa. Compact footprint, both bedrooms ensuite, strong rental yield.",
         specs: [
-            "Private plunge pool",
-            "High thatch ceiling",
-            "Open-plan living + separate lounge",
-            "Wraparound ocean-facing deck",
+            "2 bedrooms — both ensuite",
+            "Open-plan living / dining / kitchen",
+            "Covered deck with ocean views",
+            "Plunge pool or shared pool access",
             "Outdoor shower",
-            "Staff quarters",
-            "Double carport",
+            "High thatch ceiling",
+            "Compact, low-maintenance footprint",
         ],
-        floorPlan: "/images/floorplan-villa-b.jpg",
     },
     {
         id: "C",
         label: "Villa Type C",
-        bedrooms: 5,
-        bathrooms: 4,
-        livingArea: 380,
-        plotSize: 1000,
-        priceFrom: "R9 000 000",
-        position: "Prime Beachfront Corner",
+        bedrooms: 6,
+        bathrooms: 6,
+        livingArea: 440,
+        plotSize: 1200,
+        priceFrom: "R8 000 000",
+        priceTo: "R10 000 000",
+        position: "Prime Beachfront — Corner Position",
+        targetBuyer: "Built for large families, group retreats, and the premium short-stay rental market.",
         specs: [
-            "Private pool",
-            "High thatch ceiling",
-            "Open-plan living + formal lounge",
-            "Wraparound ocean-facing deck",
-            "Outdoor shower & bath",
-            "Staff quarters",
-            "Double garage",
-            "Home office / 5th bedroom",
+            "6 bedrooms — all ensuite; master wing separated",
+            "Multiple living zones + formal dining + boma",
+            "Private pool + wraparound ocean-facing deck",
+            "Full garden + staff quarters",
+            "Outdoor shower & outdoor bath",
+            "High thatch ceiling throughout",
+            "Maximum privacy buffer on estate",
         ],
-        floorPlan: "/images/floorplan-villa-c.jpg",
     },
 ];
 
@@ -143,62 +146,86 @@ export default async function VillasPage() {
                         The tiers differ in scale, position on the estate, and price.
                     </p>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
-                        {villaTypes.map((villa, i) => (
-                            <div key={villa.id} className={villaStyles.villaRow} style={{ flexDirection: i % 2 === 0 ? 'row' : 'row-reverse' }}>
-                                {/* Floor Plan */}
-                                <div className={villaStyles.floorPlanBox}>
-                                    <div className={villaStyles.floorPlanPlaceholder}>
-                                        <span className={villaStyles.floorPlanLabel}>Floor Plan</span>
-                                        <span className={villaStyles.floorPlanSub}>Villa {villa.id} — {villa.livingArea}m²</span>
-                                        <p className={villaStyles.floorPlanNote}>
-                                            Architectural drawings available on request.<br />
-                                            Contact us to receive the full plan set.
-                                        </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+                        {villaTypes.map((villa) => (
+                            <div key={villa.id} className={villaStyles.villaCard}>
+                                <div className={villaStyles.villaCardHeader}>
+                                    <div>
+                                        <span className={styles.sectionTitle}>{villa.position}</span>
+                                        <h3 className={styles.heading} style={{ fontSize: '2rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{villa.label}</h3>
+                                        <p style={{ fontSize: '0.95rem', color: '#666', fontStyle: 'italic' }}>{villa.targetBuyer}</p>
                                     </div>
-                                </div>
-
-                                {/* Specs */}
-                                <div className={villaStyles.villaSpecs}>
-                                    <span className={styles.sectionTitle}>{villa.position}</span>
-                                    <h3 className={styles.heading} style={{ fontSize: '2rem', marginTop: '0.5rem' }}>{villa.label}</h3>
-
-                                    {/* Key numbers */}
-                                    <div className={villaStyles.statRow}>
-                                        <div className={villaStyles.stat}>
-                                            <strong>{villa.bedrooms}</strong>
-                                            <span>Bedrooms</span>
-                                        </div>
-                                        <div className={villaStyles.stat}>
-                                            <strong>{villa.bathrooms}</strong>
-                                            <span>Bathrooms</span>
-                                        </div>
-                                        <div className={villaStyles.stat}>
-                                            <strong>{villa.livingArea}m²</strong>
-                                            <span>Living Area</span>
-                                        </div>
-                                        <div className={villaStyles.stat}>
-                                            <strong>{villa.plotSize}m²</strong>
-                                            <span>Plot Size</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Spec list */}
-                                    <ul className={villaStyles.specList}>
-                                        {villa.specs.map((s) => (
-                                            <li key={s}>{s}</li>
-                                        ))}
-                                    </ul>
-
-                                    <div className={villaStyles.priceRow}>
+                                    <div className={villaStyles.priceBlock}>
                                         <span className={villaStyles.priceFrom}>From</span>
                                         <span className={villaStyles.price}>{villa.priceFrom}</span>
+                                        <span className={villaStyles.priceFrom}>– {villa.priceTo}</span>
                                     </div>
+                                </div>
 
-                                    <Link href={`/contact?villa=${villa.id}`} className={styles.primaryButton} style={{ marginTop: '2rem', display: 'inline-block' }}>
+                                {/* Key numbers */}
+                                <div className={villaStyles.statRow}>
+                                    <div className={villaStyles.stat}>
+                                        <strong>{villa.bedrooms}</strong>
+                                        <span>Bedrooms</span>
+                                    </div>
+                                    <div className={villaStyles.stat}>
+                                        <strong>{villa.bathrooms}</strong>
+                                        <span>Bathrooms</span>
+                                    </div>
+                                    <div className={villaStyles.stat}>
+                                        <strong>{villa.livingArea}m²</strong>
+                                        <span>Living Area</span>
+                                    </div>
+                                    <div className={villaStyles.stat}>
+                                        <strong>{villa.plotSize}m²</strong>
+                                        <span>Plot Size</span>
+                                    </div>
+                                </div>
+
+                                {/* Spec list */}
+                                <ul className={villaStyles.specList}>
+                                    {villa.specs.map((s) => (
+                                        <li key={s}>{s}</li>
+                                    ))}
+                                </ul>
+
+                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+                                    <Link href={`/contact?villa=${villa.id}`} className={styles.primaryButton} style={{ display: 'inline-block' }}>
                                         Enquire about Villa {villa.id}
                                     </Link>
+                                    <Link href="/contact?brief=1" className={styles.secondaryButton} style={{ display: 'inline-block' }}>
+                                        Download Investor Brief
+                                    </Link>
                                 </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Design Zoning */}
+            <Section background="white">
+                <div className={styles.container} style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
+                    <span className={styles.sectionTitle}>Design Thinking</span>
+                    <h2 className={styles.heading} style={{ marginTop: '0.5rem', marginBottom: '1.5rem' }}>Every Villa Follows the Same Spatial Logic</h2>
+                    <p className={styles.paragraph} style={{ marginBottom: '2.5rem' }}>
+                        The site is oriented so that every villa faces south towards the ocean. All bedrooms are positioned on the southern face
+                        — so you wake up to the Indian Ocean. Service functions (kitchen, laundry, staff, parking, entrance) are placed on the
+                        northern side, away from the views. Living zones occupy the centre, with large sliding doors opening directly onto the
+                        deck, pool, and garden beyond.
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '6px', overflow: 'hidden', textAlign: 'center', fontSize: '0.8rem' }}>
+                        {[
+                            { zone: '▲ North', label: 'Service', sub: 'Kitchen · Staff · Parking · Entrance', bg: '#f0ece4' },
+                            { zone: '', label: 'Wet Rooms', sub: 'Bathrooms · Ensuites', bg: '#e4eeee' },
+                            { zone: '', label: 'Living', sub: 'Open-plan living · Dining', bg: '#faf6ee', bold: true },
+                            { zone: '', label: 'Bedrooms', sub: 'All ocean-facing', bg: '#eaf0ea' },
+                            { zone: '▼ South', label: 'Deck · Pool · Garden', sub: 'Indian Ocean', bg: '#ddf0f7' },
+                        ].map((z, i) => (
+                            <div key={i} style={{ padding: '1.2rem 0.5rem', background: z.bg }}>
+                                {z.zone && <div style={{ fontSize: '0.7rem', color: '#aaa', letterSpacing: '0.1em', marginBottom: '0.3rem', textTransform: 'uppercase' }}>{z.zone}</div>}
+                                <div style={{ fontWeight: z.bold ? 700 : 600, color: '#333', marginBottom: '0.3rem' }}>{z.label}</div>
+                                <div style={{ color: '#888', fontSize: '0.75rem', lineHeight: 1.4 }}>{z.sub}</div>
                             </div>
                         ))}
                     </div>

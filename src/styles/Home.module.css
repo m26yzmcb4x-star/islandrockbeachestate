@@ -150,3 +150,40 @@
         padding: 0 1rem;
     }
 }
+
+.primaryButton {
+    display: inline-block;
+    background-color: #c4a484;
+    color: white;
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.primaryButton:hover {
+    background-color: #b08d6b;
+}
+
+.secondaryButton {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-charcoal, #2c2c2c);
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid var(--color-charcoal, #2c2c2c);
+    cursor: pointer;
+}
+
+.secondaryButton:hover {
+    background-color: var(--color-charcoal, #2c2c2c);
+    color: white;
+}

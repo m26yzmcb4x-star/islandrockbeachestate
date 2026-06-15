@@ -1,55 +1,27 @@
-.villaRow {
+.villaCard {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.villaCardHeader {
     display: flex;
-    gap: 4rem;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.floorPlanBox {
-    flex: 1;
-    min-width: 0;
-}
-
-.floorPlanPlaceholder {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: var(--color-stone, #e8e0d4);
-    border: 1px dashed rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+.priceBlock {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 2rem;
-    text-align: center;
-}
-
-.floorPlanLabel {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--color-charcoal);
-    letter-spacing: 0.05em;
-}
-
-.floorPlanSub {
-    font-size: 0.85rem;
-    color: #666;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.floorPlanNote {
-    font-size: 0.82rem;
-    color: #888;
-    line-height: 1.6;
-    margin-top: 0.5rem;
-}
-
-.villaSpecs {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .statRow {
@@ -129,9 +101,18 @@
 }
 
 @media (max-width: 900px) {
-    .villaRow {
-        flex-direction: column !important;
-        gap: 2rem;
+    .villaCard {
+        padding: 1.5rem;
+    }
+
+    .villaCardHeader {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .priceBlock {
+        align-items: flex-start;
+        text-align: left;
     }
 
     .statRow {
