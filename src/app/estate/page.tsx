@@ -6,10 +6,11 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { getPageContent } from "@/lib/cms";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
-    title: "The Estate | Island Rock Beach Estate, Mozambique",
-    description: "A private, reef-protected beachfront estate in Jangamo, Mozambique. 20 exclusive villas designed for quiet, timeless accessible luxury.",
+    title: "The Estate | Island Rock Golf Estate, Mozambique",
+    description: `${FACTS.positioningLine} ${FACTS.villas.planned} private villas, a signature coastal course, and quiet, timeless accessible luxury.`,
     keywords: ["Island Rock Estate", "Mozambique beachfront", "private estate", "luxury coastal development", "Jangamo estate"],
     openGraph: { url: "https://islandrockestate.com/estate" },
 };
@@ -42,7 +43,7 @@ export default async function EstatePage() {
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
                             src={data.philosophy_image}
-                            alt="Aerial view of the Island Rock Beach Estate coastline"
+                            alt="Aerial view of the Island Rock Golf Estate coastline"
                             fill
                             style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, 50vw"

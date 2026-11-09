@@ -17,7 +17,7 @@ export default function WhatsAppFloat() {
 
     return (
         <a
-            href="https://wa.me/258850627916?text=Hi%2C%20I%27m%20interested%20in%20Island%20Rock%20Beach%20Estate"
+            href="https://wa.me/258850627916?text=Hi%2C%20I%27m%20interested%20in%20Island%20Rock%20Golf%20Estate"
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.whatsappFloat} ${isVisible ? styles.visible : ""}`}

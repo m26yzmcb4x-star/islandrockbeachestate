@@ -39,15 +39,15 @@ export default function Footer() {
                 <div className={styles.brandCol}>
                     <Link href="/" className={styles.logo}>
                         <Image
-                            src="/images/logo.svg"
-                            alt="Island Rock Beach Estate"
-                            width={160}
-                            height={45}
+                            src="/icon.svg"
+                            alt="Island Rock Golf Estate"
+                            width={83}
+                            height={93}
                             className={styles.logoImage}
                         />
                     </Link>
                     <p className={styles.tagline}>
-                        A quiet, timeless, accessible-luxury beachfront estate in Jangamo, Mozambique.
+                        A quiet, timeless, accessible-luxury golf and beachfront estate in Jangamo, Mozambique.
                     </p>
                 </div>
 
@@ -55,8 +55,10 @@ export default function Footer() {
                     <h4>Sitemap</h4>
                     <div className={styles.links}>
                         <Link href="/estate" className={styles.link}>The Estate</Link>
-                        <Link href="/location" className={styles.link}>Location</Link>
                         <Link href="/villas" className={styles.link}>The Villas</Link>
+                        <Link href="/golf" className={styles.link}>Golf</Link>
+                        <Link href="/hotel" className={styles.link}>Hotel</Link>
+                        <Link href="/location" className={styles.link}>Location</Link>
                         <Link href="/lifestyle" className={styles.link}>Lifestyle</Link>
                     </div>
                 </div>
@@ -111,7 +113,7 @@ export default function Footer() {
                         <Facebook size={20} className={styles.socialIcon} />
                     </a>
                 </div>
-                &copy; {new Date().getFullYear()} Island Rock Beach Estate. All rights reserved.
+                &copy; {new Date().getFullYear()} Island Rock Golf Estate. All rights reserved.
             </div>
         </footer>
     );

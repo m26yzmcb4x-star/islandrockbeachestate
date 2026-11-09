@@ -33,7 +33,7 @@
 }
 
 .logoImage {
-    height: 120px;
+    height: 82px;
     width: auto;
     transition: all 0.3s ease;
     filter: brightness(0) invert(1);
@@ -41,7 +41,7 @@
 }
 
 .nav.scrolled .logoImage {
-    height: 75px;
+    height: 58px;
     filter: brightness(0);
     /* Makes logo black when scrolled */
 }
@@ -289,11 +289,11 @@
     }
     
     .logoImage {
-        height: 90px;
+        height: 72px;
     }
-    
+
     .nav.scrolled .logoImage {
-        height: 65px;
+        height: 52px;
     }
     
     .rightCta {

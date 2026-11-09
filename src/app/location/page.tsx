@@ -10,7 +10,7 @@ import GoogleMap from "@/components/GoogleMap";
 import { Plane, Car, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Location — Jangamo, Inhambane | Island Rock Beach Estate",
+    title: "Location — Jangamo, Inhambane | Island Rock Golf Estate",
     description: "Discover Jangamo, Inhambane Province — a pristine reef-protected bay on Mozambique's southern coast. Remote enough to be wild, accessible enough for regular visits.",
     keywords: ["Jangamo Mozambique", "Inhambane property", "reef-protected beach", "Mozambique coast", "beachfront location"],
     openGraph: { url: "https://islandrockestate.com/location" },
@@ -40,7 +40,7 @@ export default function LocationPage() {
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
                             src="/images/shipwreck.jpg"
-                            alt="Historic shipwreck landmark near Island Rock Beach Estate"
+                            alt="Historic shipwreck landmark near Island Rock Golf Estate"
                             fill
                             style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -82,7 +82,7 @@ export default function LocationPage() {
                                         <Plane size={18} /> By Air
                                     </span>
                                     <span className={locationStyles.travelDesc}>
-                                        Regular flights connect Johannesburg (ORT) and Maputo directly to Inhambane Airport (INH), located just 40 minutes from the estate.
+                                        LAM operates non-stop flights to Inhambane Airport (INH) from Maputo and Vilankulo, located just 40 minutes from the estate. Flying from Johannesburg, connect via Maputo.
                                     </span>
                                 </li>
                                 <li className={locationStyles.travelItem}>

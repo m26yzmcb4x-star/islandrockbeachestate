@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ScrollCTA from "@/components/ScrollCTA";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { FACTS } from "@/lib/facts";
 
 const cinzel = Cinzel({
   variable: "--font-serif",
@@ -21,32 +22,32 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Island Rock Beach Estate | Accessible Luxury in Mozambique",
-    template: "%s | Island Rock Beach Estate",
+    default: "Island Rock Golf Estate | Accessible Luxury in Mozambique",
+    template: "%s | Island Rock Golf Estate",
   },
-  description: "A private, reef-protected beachfront estate in Jangamo, Mozambique. 20 exclusive villas designed for quiet, timeless accessible luxury.",
-  keywords: ["Mozambique real estate", "beachfront villas", "Jangamo property", "investment Mozambique", "Island Rock Beach Estate"],
+  description: `${FACTS.positioningLine} ${FACTS.golf.holes} holes, ${FACTS.villas.planned} private villas and a sea-facing hotel — all at concept stage in ${FACTS.location}.`,
+  keywords: ["Mozambique golf estate", "golf villas Mozambique", "beachfront villas", "Jangamo property", "investment Mozambique", "Island Rock Golf Estate"],
   metadataBase: new URL("https://islandrockestate.com"),
   openGraph: {
     type: "website",
     locale: "en_ZA",
     url: "https://islandrockestate.com",
-    siteName: "Island Rock Beach Estate",
-    title: "Island Rock Beach Estate | Accessible Luxury in Mozambique",
-    description: "A private, reef-protected beachfront estate in Jangamo, Mozambique. 20 exclusive villas designed for quiet, timeless accessible luxury.",
+    siteName: "Island Rock Golf Estate",
+    title: "Island Rock Golf Estate | Accessible Luxury in Mozambique",
+    description: `${FACTS.positioningLine} ${FACTS.golf.holes} holes, ${FACTS.villas.planned} private villas and a sea-facing hotel — all at concept stage in ${FACTS.location}.`,
     images: [
       {
         url: "/images/villa-coastline-aerial.jpg",
         width: 1200,
         height: 630,
-        alt: "Aerial view of Island Rock Beach Estate",
+        alt: "Aerial view of Island Rock Golf Estate",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Island Rock Beach Estate | Accessible Luxury in Mozambique",
-    description: "A private, reef-protected beachfront estate in Jangamo, Mozambique.",
+    title: "Island Rock Golf Estate | Accessible Luxury in Mozambique",
+    description: "A private golf and beachfront estate in Jangamo, Mozambique.",
     images: ["/images/villa-coastline-aerial.jpg"],
   },
 };
@@ -73,11 +74,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
-              "name": "Island Rock Beach Estate",
+              "name": "Island Rock Golf Estate",
               "url": "https://islandrockestate.com",
-              "logo": "https://islandrockestate.com/images/logo.svg",
+              "logo": "https://islandrockestate.com/icon.svg",
               "image": "https://islandrockestate.com/images/villa-coastline-aerial.jpg",
-              "description": "A private, reef-protected beachfront estate in Jangamo, Mozambique. 20 exclusive villas designed for quiet, timeless accessible luxury.",
+              "description": `${FACTS.positioningLine} ${FACTS.golf.holes} holes, ${FACTS.villas.planned} private villas and a sea-facing hotel — all at concept stage in ${FACTS.location}.`,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Jangamo",
@@ -108,7 +109,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Island Rock Beach Estate",
+              "name": "Island Rock Golf Estate",
               "url": "https://islandrockestate.com",
               "potentialAction": {
                 "@type": "SearchAction",

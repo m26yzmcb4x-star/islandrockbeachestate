@@ -23,12 +23,15 @@ export default function Navigation() {
 
 
     // Combined nav links for consistency
+    // Ordered by owner priority: golf and investment lead, villas follow, hotel last.
     const navLinks = [
+        { name: "Golf", href: "/golf" },
+        { name: "Investment", href: "/investment" },
+        { name: "The Villas", href: "/villas" },
+        { name: "Hotel", href: "/hotel" },
         { name: "The Estate", href: "/" },
         { name: "Location", href: "/location" },
-        { name: "The Villas", href: "/villas" },
         { name: "Lifestyle", href: "/lifestyle" },
-        { name: "Investment", href: "/investment" },
         { name: "Gallery", href: "/gallery" },
         { name: "Insights", href: "/blog" },
         { name: "FAQ", href: "/faq" },
@@ -40,10 +43,10 @@ export default function Navigation() {
                 <div className={styles.container}>
                     <Link href="/" className={styles.logo}>
                         <Image
-                            src="/images/logo.svg"
-                            alt="Island Rock Beach Estate"
-                            width={180}
-                            height={50}
+                            src="/icon.svg"
+                            alt="Island Rock Golf Estate"
+                            width={83}
+                            height={93}
                             className={styles.logoImage}
                             priority
                         />

@@ -42,9 +42,9 @@ export default function ScrollCTA() {
                     <X size={20} />
                 </button>
                 <span className={styles.label}>Limited Availability</span>
-                <h3 className={styles.heading}>Only 20 Beachfront Villas</h3>
+                <h3 className={styles.heading}>Only 20 Golf-Estate Villas</h3>
                 <p className={styles.text}>
-                    Secure your position at Island Rock Beach Estate. 
+                    Secure your position at Island Rock Golf Estate. 
                     Get in touch to learn about available villas and pricing.
                 </p>
                 <Link href="/contact" className={styles.cta} onClick={handleDismiss}>

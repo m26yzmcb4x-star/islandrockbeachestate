@@ -3,87 +3,17 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
-import villaStyles from "./villas.module.css";
 import Link from "next/link";
 import { getPageContent } from "@/lib/cms";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
-    title: "The Villas | Island Rock Beach Estate, Mozambique",
-    description: "Explore 20 exclusive beachfront villas at Island Rock — 3, 4, and 5-bedroom designs from R4m. Full specs, floor plans, and pricing.",
-    keywords: ["Mozambique villas", "beachfront villas", "Jangamo villas", "luxury villa design", "coastal architecture"],
+    title: "The Villas | Island Rock Golf Estate, Mozambique",
+    description: `${FACTS.villas.planned} freestanding villas planned at Island Rock Golf Estate — ${FACTS.villas.sizeRangeM2} m², tailored to bedrooms and client needs, across beach and golf-course positions.`,
+    keywords: ["Mozambique golf villas", "beachfront villas", "Jangamo villas", "luxury villa design", "coastal architecture"],
     openGraph: { url: "https://islandrockestate.com/villas" },
 };
-
-// Update this number when a villa is reserved
-const VILLAS_REMAINING = 16;
-const TOTAL_VILLAS = 20;
-
-const villaTypes = [
-    {
-        id: "A",
-        label: "Villa Type A",
-        bedrooms: 2,
-        bathrooms: 2,
-        livingArea: 140,
-        plotSize: 400,
-        priceFrom: "R4 000 000",
-        priceTo: "R5 000 000",
-        position: "Garden & Ocean View",
-        targetBuyer: "The lock-up-and-go investment villa. Compact footprint, both bedrooms ensuite, strong rental yield.",
-        specs: [
-            "2 bedrooms — both ensuite",
-            "Open-plan living / dining / kitchen",
-            "Covered deck with ocean views",
-            "Plunge pool or shared pool access",
-            "Outdoor shower",
-            "High thatch ceiling",
-            "Compact, low-maintenance footprint",
-        ],
-    },
-    {
-        id: "B",
-        label: "Villa Type B",
-        bedrooms: 3,
-        bathrooms: 3,
-        livingArea: 240,
-        plotSize: 600,
-        priceFrom: "R6 000 000",
-        priceTo: "R8 000 000",
-        position: "Direct Beachfront",
-        targetBuyer: "Ideal for couples or small families — and highly optimised for the holiday rental market.",
-        specs: [
-            "Master ensuite + 2 further bedrooms (1 ensuite)",
-            "Open-plan living / dining / kitchen",
-            "Private pool (4×6 m)",
-            "Ocean-facing wraparound deck",
-            "Outdoor shower",
-            "High thatch ceiling",
-            "Natural materials throughout",
-        ],
-    },
-    {
-        id: "C",
-        label: "Villa Type C",
-        bedrooms: 6,
-        bathrooms: 6,
-        livingArea: 440,
-        plotSize: 1200,
-        priceFrom: "R8 000 000",
-        priceTo: "R10 000 000",
-        position: "Prime Beachfront — Corner Position",
-        targetBuyer: "Built for large families, group retreats, and the premium short-stay rental market.",
-        specs: [
-            "6 bedrooms — all ensuite; master wing separated",
-            "Multiple living zones + formal dining + boma",
-            "Private pool + wraparound ocean-facing deck",
-            "Full garden + staff quarters",
-            "Outdoor shower & outdoor bath",
-            "High thatch ceiling throughout",
-            "Maximum privacy buffer on estate",
-        ],
-    },
-];
 
 export default async function VillasPage() {
     const data = await getPageContent("villas");
@@ -102,7 +32,7 @@ export default async function VillasPage() {
                 ctaLink="/contact"
             />
 
-            {/* Availability strip */}
+            {/* Status strip */}
             <div style={{
                 background: 'var(--color-charcoal)',
                 color: 'white',
@@ -112,8 +42,7 @@ export default async function VillasPage() {
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
             }}>
-                Phase 1 &nbsp;·&nbsp; {TOTAL_VILLAS} Villas &nbsp;·&nbsp;{' '}
-                <strong>{VILLAS_REMAINING} of {TOTAL_VILLAS} remaining</strong>
+                Concept Stage &nbsp;·&nbsp; <strong>{FACTS.villas.planned} Villas Planned</strong>
             </div>
 
             {/* Design Intro */}
@@ -122,7 +51,7 @@ export default async function VillasPage() {
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
                             src={data.intro_image}
-                            alt="Architecturally designed villa at Island Rock Beach Estate"
+                            alt="Architecturally designed villa at Island Rock Golf Estate"
                             fill
                             style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -136,69 +65,21 @@ export default async function VillasPage() {
                 </div>
             </Section>
 
-            {/* Villa Types */}
+            {/* Villa Positions */}
             <Section background="sand">
                 <div>
-                    <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.75rem' }}>Choose Your Villa</span>
-                    <h2 className={styles.heading} style={{ textAlign: 'center', marginBottom: '1rem' }}>Three Configurations</h2>
-                    <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 4rem auto' }}>
-                        All villas share the same design language — high thatch, natural materials, indoor-outdoor living.
-                        The tiers differ in scale, position on the estate, and price.
+                    <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.75rem' }}>Tailored to You</span>
+                    <h2 className={styles.heading} style={{ textAlign: 'center', marginBottom: '1rem' }}>{FACTS.villas.planned} Villas, Built to Fit</h2>
+                    <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 2.5rem auto' }}>
+                        All villas share the same design language — high thatch, natural materials, indoor-outdoor living —
+                        with layouts from {FACTS.villas.sizeRangeM2} m², tailored to bedroom count and each buyer&apos;s needs.
+                        Villas are positioned across a mix of beachfront and golf-course settings.
+                        Specifications and pricing will be confirmed as plans are finalised.
                     </p>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-                        {villaTypes.map((villa) => (
-                            <div key={villa.id} className={villaStyles.villaCard}>
-                                <div className={villaStyles.villaCardHeader}>
-                                    <div>
-                                        <span className={styles.sectionTitle}>{villa.position}</span>
-                                        <h3 className={styles.heading} style={{ fontSize: '2rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{villa.label}</h3>
-                                        <p style={{ fontSize: '0.95rem', color: '#666', fontStyle: 'italic' }}>{villa.targetBuyer}</p>
-                                    </div>
-                                    <div className={villaStyles.priceBlock}>
-                                        <span className={villaStyles.priceFrom}>From</span>
-                                        <span className={villaStyles.price}>{villa.priceFrom}</span>
-                                        <span className={villaStyles.priceFrom}>– {villa.priceTo}</span>
-                                    </div>
-                                </div>
-
-                                {/* Key numbers */}
-                                <div className={villaStyles.statRow}>
-                                    <div className={villaStyles.stat}>
-                                        <strong>{villa.bedrooms}</strong>
-                                        <span>Bedrooms</span>
-                                    </div>
-                                    <div className={villaStyles.stat}>
-                                        <strong>{villa.bathrooms}</strong>
-                                        <span>Bathrooms</span>
-                                    </div>
-                                    <div className={villaStyles.stat}>
-                                        <strong>{villa.livingArea}m²</strong>
-                                        <span>Living Area</span>
-                                    </div>
-                                    <div className={villaStyles.stat}>
-                                        <strong>{villa.plotSize}m²</strong>
-                                        <span>Plot Size</span>
-                                    </div>
-                                </div>
-
-                                {/* Spec list */}
-                                <ul className={villaStyles.specList}>
-                                    {villa.specs.map((s) => (
-                                        <li key={s}>{s}</li>
-                                    ))}
-                                </ul>
-
-                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-                                    <Link href={`/contact?villa=${villa.id}`} className={styles.primaryButton} style={{ display: 'inline-block' }}>
-                                        Enquire about Villa {villa.id}
-                                    </Link>
-                                    <Link href="/contact?brief=1" className={styles.secondaryButton} style={{ display: 'inline-block' }}>
-                                        Download Investor Brief
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
+                    <div style={{ textAlign: 'center' }}>
+                        <Link href="/contact" className={styles.primaryButton} style={{ display: 'inline-block' }}>
+                            Register Villa Interest
+                        </Link>
                     </div>
                 </div>
             </Section>
@@ -241,7 +122,7 @@ export default async function VillasPage() {
                             { title: 'Natural Materials', desc: 'Thatch, timber, stone, and polished concrete — built for longevity in a coastal climate.' },
                             { title: 'Indoor-Outdoor Flow', desc: 'Large sliding glass doors dissolve the line between living spaces and the deck.' },
                             { title: 'Off-Grid Ready', desc: 'Solar and battery provision, borehole water, and robust build spec for the environment.' },
-                            { title: 'Rental Management', desc: 'Optional placement in the estate\'s managed rental pool when not in personal use.' },
+                            { title: 'Tailored Layouts', desc: 'Bedroom count and layout tailored to each buyer\'s needs, independent of the hotel.' },
                         ].map((f) => (
                             <div key={f.title} className={styles.featureCard}>
                                 <h4 className={styles.featureTitle}>{f.title}</h4>
@@ -256,10 +137,10 @@ export default async function VillasPage() {
             <Section background="dark">
                 <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'white' }}>
                     <h2 className={styles.heading} style={{ color: 'white', marginBottom: '1rem' }}>
-                        {VILLAS_REMAINING} of {TOTAL_VILLAS} villas remain in Phase 1.
+                        {FACTS.villas.planned} villas planned across the estate.
                     </h2>
                     <p className={styles.paragraph} style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '560px', margin: '0 auto 2rem auto' }}>
-                        Contact us to receive the full floor plan set, spec sheet, and pricing guide for your preferred villa type.
+                        Register to receive villa updates as plans, specifications and pricing are confirmed.
                     </p>
                     <Link href="/contact" className={styles.primaryButton}>Enquire Now</Link>
                 </div>

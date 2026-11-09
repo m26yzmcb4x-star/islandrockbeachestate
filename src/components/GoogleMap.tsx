@@ -127,7 +127,7 @@ export default function GoogleMap() {
                 const marker = new maps.Marker({
                     position: center,
                     map: map,
-                    title: "Island Rock Beach Estate",
+                    title: "Island Rock Golf Estate",
                     animation: maps.Animation.DROP,
                 });
 
@@ -166,7 +166,7 @@ export default function GoogleMap() {
         return (
             <div className={styles.mapWrapper}>
                 <iframe
-                    title="Island Rock Beach Estate — Jangamo, Inhambane, Mozambique"
+                    title="Island Rock Golf Estate — Jangamo, Inhambane, Mozambique"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=35.460%2C-24.162%2C35.506%2C-24.132&layer=mapnik&marker=-24.14801%2C35.48309"
                     className={styles.mapContainer}
                     style={{ border: 0 }}

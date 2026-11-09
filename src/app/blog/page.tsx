@@ -7,7 +7,7 @@ import { getBlogPosts } from "@/lib/cms";
 import BlogCard from "@/components/BlogCard";
 
 export const metadata: Metadata = {
-    title: "Insights — Mozambique Property & Investment | Island Rock Beach Estate",
+    title: "Insights — Mozambique Property & Investment | Island Rock Golf Estate",
     description: "Guides and insights on buying property in Mozambique, Inhambane investment returns, DUAT ownership, and coastal living. Written for South African investors.",
     keywords: ["Mozambique property guide", "Inhambane investment", "DUAT Mozambique", "buy property Mozambique South African", "beachfront investment"],
     openGraph: { url: "https://islandrockestate.com/blog" },

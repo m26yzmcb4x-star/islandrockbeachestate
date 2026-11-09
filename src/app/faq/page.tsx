@@ -6,8 +6,8 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-    title: "FAQ — Ownership, Investment & Access | Island Rock Beach Estate",
-    description: "Answers to common questions about owning property at Island Rock Beach Estate — access, ownership structures, rental options, and building timelines.",
+    title: "FAQ — Ownership, Investment & Access | Island Rock Golf Estate",
+    description: "Answers to common questions about owning property at Island Rock Golf Estate — access, ownership structures, rental options, and building timelines.",
     keywords: ["Mozambique property FAQ", "beachfront ownership", "Jangamo access", "property investment questions"],
     openGraph: { url: "https://islandrockestate.com/faq" },
 };
@@ -56,14 +56,17 @@ export default function FAQPage() {
                         <div className={styles.faqItem} style={{ marginBottom: '2.5rem' }}>
                             <h4 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}>Can I rent out my villa?</h4>
                             <p className={styles.paragraph} style={{ fontSize: '1rem', lineHeight: '1.7', maxWidth: '100%' }}>
-                                Yes. Island Rock Estate is designed as a hybrid lifestyle-investment destination. Owners have the option to place their villas in a rental pool managed by the estate, generating income when not in personal use.
+                                Villa rental will be separate from the hotel. The exact mechanism is still being finalised —
+                                register your interest and we will update you once it is confirmed.
                             </p>
                         </div>
 
                         <div className={styles.faqItem} style={{ marginBottom: '2.5rem' }}>
                             <h4 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}>What is the building timeline?</h4>
                             <p className={styles.paragraph} style={{ fontSize: '1rem', lineHeight: '1.7', maxWidth: '100%' }}>
-                                We follow a phased development approach to minimize construction impact on residents. Phase 1 infrastructure is currently underway. Owners typically have a set building window to ensure the estate matures cohesively.
+                                Nothing is built yet — Island Rock is currently at the concept stage. The restaurant and beach
+                                bar are planned to open first, followed by the golf course, then the hotel and villas in
+                                phases. A firm construction timeline will be announced once funding is secured.
                             </p>
                         </div>
                     </div>
@@ -115,7 +118,7 @@ function FAQJsonLd() {
                 "name": "Can I rent out my villa?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Island Rock Estate is designed as a hybrid lifestyle-investment destination. Owners have the option to place their villas in a rental pool managed by the estate, generating income when not in personal use."
+                    "text": "Villa rental will be separate from the hotel. The exact mechanism is still being finalised — register your interest and we will update you once it is confirmed."
                 }
             },
             {
@@ -123,7 +126,7 @@ function FAQJsonLd() {
                 "name": "What is the building timeline?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We follow a phased development approach to minimize construction impact on residents. Phase 1 infrastructure is currently underway. Owners typically have a set building window to ensure the estate matures cohesively."
+                    "text": "Nothing is built yet — Island Rock is currently at the concept stage. The restaurant and beach bar are planned to open first, followed by the golf course, then the hotel and villas in phases. A firm construction timeline will be announced once funding is secured."
                 }
             }
         ]

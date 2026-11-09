@@ -14,8 +14,8 @@ interface HeroProps {
 }
 
 export default function Hero({
-    headline = "Island Rock Beach Estate",
-    subheadline = "A rare reef-protected beachfront estate in Jangamo, Mozambique.",
+    headline = "Island Rock Golf Estate",
+    subheadline = "A private golf and beachfront estate in Jangamo, Mozambique.",
     ctaText = "Enquire",
     ctaLink = "/contact",
     variant = "full",

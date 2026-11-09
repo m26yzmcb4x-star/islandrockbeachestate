@@ -7,40 +7,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { TrendingUp, Globe, Shield } from "lucide-react";
 import InvestmentBriefCapture from "@/components/InvestmentBriefCapture";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
-    title: "Investment Opportunity | Island Rock Beach Estate, Mozambique",
-    description: "Secure a rare beachfront investment in Jangamo, Mozambique. Villas from R4m–R10m with capital growth, rental yield projections, and full ownership guidance.",
-    keywords: ["Mozambique investment", "beachfront property investment", "Jangamo villas", "Africa real estate investment", "coastal property", "DUAT Mozambique"],
+    title: "Investment Opportunity | Island Rock Golf Estate, Mozambique",
+    description: `Register your interest in investing in Island Rock Golf Estate — a ${FACTS.sizeHectares}-hectare golf, residential and hotel development in Jangamo, Mozambique, at concept stage.`,
+    keywords: ["Mozambique golf investment", "beachfront property investment", "Jangamo golf estate", "Africa real estate investment", "coastal property", "DUAT Mozambique"],
     openGraph: { url: "https://islandrockestate.com/investment" },
 };
-
-const priceTiers = [
-    {
-        type: "Villa A",
-        beds: "3 bed / 2 bath",
-        size: "240m²",
-        position: "Garden & Ocean View",
-        price: "From R4 000 000",
-        highlight: false,
-    },
-    {
-        type: "Villa B",
-        beds: "4 bed / 3 bath",
-        size: "310m²",
-        position: "Direct Beachfront",
-        price: "From R6 500 000",
-        highlight: true,
-    },
-    {
-        type: "Villa C",
-        beds: "5 bed / 4 bath",
-        size: "380m²",
-        position: "Prime Beachfront Corner",
-        price: "From R9 000 000",
-        highlight: false,
-    },
-];
 
 export default function InvestmentPage() {
     return (
@@ -49,7 +23,7 @@ export default function InvestmentPage() {
                 headline="A Lifestyle Investment"
                 subheadline="In One of Africa's Last Untouched Coastal Regions."
                 variant="small"
-                ctaText="Download Investment Brief"
+                ctaText="Register as an Investor"
                 ctaLink="#brief"
             />
 
@@ -78,64 +52,21 @@ export default function InvestmentPage() {
                 </div>
             </Section>
 
-            {/* Price Tiers */}
+            {/* Scale */}
             <Section background="stone">
                 <div>
-                    <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.5rem' }}>Pricing Guide</span>
-                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '0.75rem' }}>What Drives the Price</h3>
-                    <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-                        Price is determined by villa size, bedroom count, and beachfront position.
-                        Corner and direct beachfront plots carry a premium over garden-view positions.
+                    <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.5rem' }}>The Scale</span>
+                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '0.75rem' }}>What&apos;s Planned</h3>
+                    <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem auto' }}>
+                        A {FACTS.sizeHectares}-hectare golf, residential and hotel estate — {FACTS.golf.holes} holes,{' '}
+                        {FACTS.villas.planned} freestanding villas ({FACTS.villas.sizeRangeM2} m², tailored to bedrooms
+                        and client needs), and a {FACTS.hotel.rooms}-room sea-facing hotel. All currently at concept stage.
+                        Villa positions, specifications and pricing will be confirmed as the estate is finalised.
                     </p>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
-                        {priceTiers.map((t) => (
-                            <div key={t.type} style={{
-                                padding: '2.5rem 2rem',
-                                background: t.highlight ? 'var(--color-charcoal)' : 'var(--color-white)',
-                                color: t.highlight ? 'white' : 'inherit',
-                                borderRadius: '4px',
-                                border: t.highlight ? 'none' : '1px solid rgba(0,0,0,0.07)',
-                                position: 'relative',
-                            }}>
-                                {t.highlight && (
-                                    <div style={{
-                                        position: 'absolute',
-                                        top: '-12px',
-                                        left: '50%',
-                                        transform: 'translateX(-50%)',
-                                        background: 'var(--color-green, #4A6C6F)',
-                                        color: 'white',
-                                        fontSize: '0.7rem',
-                                        letterSpacing: '0.12em',
-                                        textTransform: 'uppercase',
-                                        padding: '0.3rem 1rem',
-                                        borderRadius: '2px',
-                                        whiteSpace: 'nowrap',
-                                    }}>
-                                        Most Popular
-                                    </div>
-                                )}
-                                <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', marginBottom: '0.5rem' }}>{t.type}</h4>
-                                <p style={{ fontSize: '0.85rem', opacity: 0.7, marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{t.beds}</p>
-                                <p style={{ fontSize: '0.85rem', opacity: 0.7, marginBottom: '0.4rem' }}>{t.size} living area</p>
-                                <p style={{ fontSize: '0.85rem', opacity: 0.75, marginBottom: '1.5rem' }}>{t.position}</p>
-                                <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem' }}>{t.price}</p>
-                                <Link href="/contact" style={{
-                                    display: 'inline-block',
-                                    marginTop: '1.5rem',
-                                    fontSize: '0.8rem',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.1em',
-                                    borderBottom: '1px solid currentColor',
-                                    paddingBottom: '2px',
-                                    color: 'inherit',
-                                    textDecoration: 'none',
-                                }}>
-                                    Enquire
-                                </Link>
-                            </div>
-                        ))}
+                    <div style={{ textAlign: 'center' }}>
+                        <Link href="/contact" className={styles.primaryButton} style={{ display: 'inline-block' }}>
+                            Register Villa Interest
+                        </Link>
                     </div>
                 </div>
             </Section>
@@ -143,59 +74,24 @@ export default function InvestmentPage() {
             {/* Key Value Drivers */}
             <Section background="white">
                 <div className={styles.container}>
-                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>Key Value Drivers</h3>
+                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>Why Island Rock</h3>
                     <div className={styles.featuresGrid}>
                         <div className={styles.featureCard}>
                             <Shield size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                            <h4 className={styles.featureTitle}>Scarcity</h4>
-                            <p>20 villas on a protected coastline. Once Phase 1 is sold, these positions are gone.</p>
+                            <h4 className={styles.featureTitle}>Government-Backed Golf Zone</h4>
+                            <p>Mozambique&apos;s Council of Ministers approved a special golf tourism zone in Inhambane, covering areas including Jangamo, in August 2026.</p>
                         </div>
                         <div className={styles.featureCard}>
                             <TrendingUp size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                            <h4 className={styles.featureTitle}>Capital Growth</h4>
-                            <p>Early-stage positioning in an emerging international destination with limited comparable supply.</p>
+                            <h4 className={styles.featureTitle}>Early-Stage Positioning</h4>
+                            <p>An early position in an emerging golf and coastal destination, ahead of construction.</p>
                         </div>
                         <div className={styles.featureCard}>
                             <Globe size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
-                            <h4 className={styles.featureTitle}>Rental Income</h4>
-                            <p>Comparable beachfront villas in Inhambane achieve USD 250–450/night in peak season.</p>
+                            <h4 className={styles.featureTitle}>Golf, Hotel and Villas Together</h4>
+                            <p>A single developer-owned and operated golf course anchors the estate&apos;s hotel and villa value.</p>
                         </div>
                     </div>
-                </div>
-            </Section>
-
-            {/* Projected Returns */}
-            <Section background="sand">
-                <div>
-                    <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.5rem' }}>Rental Potential</span>
-                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '0.75rem' }}>Illustrative Yield</h3>
-                    <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-                        Based on comparable beachfront villa rentals in the Inhambane region.
-                        Actual yield depends on occupancy, villa type, and management approach.
-                    </p>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }}>
-                        {[
-                            { label: 'Average peak nightly rate', value: 'USD 300', note: 'Nov – Apr, comparable properties' },
-                            { label: 'Conservative annual occupancy', value: '80 nights', note: 'vs 120+ nights at established lodges' },
-                            { label: 'Gross annual rental income', value: '~R450 000', note: 'At current ZAR/USD rates' },
-                            { label: 'Illustrative gross yield', value: '~11%', note: 'On R4m entry-level villa' },
-                        ].map((s) => (
-                            <div key={s.label} style={{
-                                background: 'white',
-                                padding: '2rem 1.5rem',
-                                borderRadius: '4px',
-                                textAlign: 'center',
-                            }}>
-                                <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', color: 'var(--color-charcoal)', marginBottom: '0.4rem' }}>{s.value}</p>
-                                <p style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.4rem', opacity: 0.75 }}>{s.label}</p>
-                                <p style={{ fontSize: '0.78rem', opacity: 0.5 }}>{s.note}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p style={{ textAlign: 'center', fontSize: '0.78rem', opacity: 0.5, marginTop: '1.5rem' }}>
-                        * Illustrative only. Not a guarantee of returns. Speak to us for the full financial model.
-                    </p>
                 </div>
             </Section>
 
