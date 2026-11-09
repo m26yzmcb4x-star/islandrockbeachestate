@@ -39,10 +39,10 @@ export default function Footer() {
                 <div className={styles.brandCol}>
                     <Link href="/" className={styles.logo}>
                         <Image
-                            src="/icon.svg"
+                            src="/images/island-rock-logo.png"
                             alt="Island Rock Golf Estate"
-                            width={83}
-                            height={93}
+                            width={156}
+                            height={116}
                             className={styles.logoImage}
                         />
                     </Link>

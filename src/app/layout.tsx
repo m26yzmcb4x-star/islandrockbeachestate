@@ -76,7 +76,7 @@ export default function RootLayout({
               "@type": "RealEstateAgent",
               "name": "Island Rock Golf Estate",
               "url": "https://islandrockestate.com",
-              "logo": "https://islandrockestate.com/icon.svg",
+              "logo": "https://islandrockestate.com/images/island-rock-logo.png",
               "image": "https://islandrockestate.com/images/villa-coastline-aerial.jpg",
               "description": `${FACTS.positioningLine} ${FACTS.golf.holes} holes, ${FACTS.villas.planned} private villas and a sea-facing hotel — all at concept stage in ${FACTS.location}.`,
               "address": {

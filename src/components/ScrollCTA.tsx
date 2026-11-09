@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./ScrollCTA.module.css";
 import { X } from "lucide-react";
+import { FACTS } from "@/lib/facts";
 
 export default function ScrollCTA() {
     const [isVisible, setIsVisible] = useState(false);
@@ -41,11 +42,11 @@ export default function ScrollCTA() {
                 <button className={styles.close} onClick={handleDismiss} aria-label="Close">
                     <X size={20} />
                 </button>
-                <span className={styles.label}>Limited Availability</span>
-                <h3 className={styles.heading}>Only 20 Golf-Estate Villas</h3>
+                <span className={styles.label}>Concept Stage</span>
+                <h3 className={styles.heading}>{FACTS.villas.planned} Villas Planned at Island Rock</h3>
                 <p className={styles.text}>
-                    Secure your position at Island Rock Golf Estate. 
-                    Get in touch to learn about available villas and pricing.
+                    Register your interest in Island Rock Golf Estate to be among the
+                    first to hear about villa positions, pricing and golf membership.
                 </p>
                 <Link href="/contact" className={styles.cta} onClick={handleDismiss}>
                     Enquire Now
