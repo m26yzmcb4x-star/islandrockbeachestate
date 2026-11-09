@@ -69,6 +69,8 @@ export default function Footer() {
                         <Link href="/investment" className={styles.link}>Investment</Link>
                         <Link href="/contact" className={styles.link}>Contact Us</Link>
                         <Link href="/gallery" className={styles.link}>Gallery</Link>
+                        <Link href="/blog" className={styles.link}>Insights</Link>
+                        <Link href="/faq" className={styles.link}>FAQ</Link>
                     </div>
                 </div>
 

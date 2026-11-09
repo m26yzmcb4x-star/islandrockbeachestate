@@ -57,20 +57,20 @@ export default function GolfPage() {
 
             <Section background="sand">
                 <div className={styles.container}>
-                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>Course Highlights</h3>
+                    <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>Explore the Golf Estate</h3>
                     <div className={styles.featuresGrid}>
-                        <div className={styles.featureCard}>
-                            <h4 className={styles.featureTitle}>Coastal Routing</h4>
-                            <p>Fairways shaped to the dunes, with ocean views across the front and closing holes.</p>
-                        </div>
-                        <div className={styles.featureCard}>
-                            <h4 className={styles.featureTitle}>Environmentally Led</h4>
-                            <p>Indigenous planting, water-wise turf, and a light footprint on preserved coastal land.</p>
-                        </div>
-                        <div className={styles.featureCard}>
-                            <h4 className={styles.featureTitle}>Clubhouse Living</h4>
-                            <p>A future clubhouse, practice facilities, and golf-front villa positions on the estate.</p>
-                        </div>
+                        <Link href="/golf/course" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+                            <h4 className={styles.featureTitle}>The Course &rarr;</h4>
+                            <p>18 holes, par 72 — dune-top ocean views on 1 and 2, a par-3 valley hole at 3.</p>
+                        </Link>
+                        <Link href="/golf/membership" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+                            <h4 className={styles.featureTitle}>Membership &rarr;</h4>
+                            <p>Open to owners, hotel guests and the public. Comes with a villa; fees to be announced.</p>
+                        </Link>
+                        <Link href="/golf/clubhouse" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+                            <h4 className={styles.featureTitle}>Clubhouse &rarr;</h4>
+                            <p>A separate, low-key building near the course, open to everyone on the estate.</p>
+                        </Link>
                     </div>
                     <p className={styles.paragraph} style={{ textAlign: 'center', marginTop: '2.5rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
                         Course specifications, par, and yardage will be published as the design is finalised.

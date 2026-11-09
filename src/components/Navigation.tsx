@@ -24,8 +24,14 @@ export default function Navigation() {
 
     // Combined nav links for consistency
     // Ordered by owner priority: golf and investment lead, villas follow, hotel last.
-    const navLinks = [
-        { name: "Golf", href: "/golf" },
+    const navLinks: { name: string; href: string; children?: { name: string; href: string }[] }[] = [
+        {
+            name: "Golf", href: "/golf", children: [
+                { name: "The Course", href: "/golf/course" },
+                { name: "Membership", href: "/golf/membership" },
+                { name: "Clubhouse", href: "/golf/clubhouse" },
+            ]
+        },
         { name: "Investment", href: "/investment" },
         { name: "The Villas", href: "/villas" },
         { name: "Hotel", href: "/hotel" },
@@ -55,13 +61,24 @@ export default function Navigation() {
                     {/* Centered Desktop Menu */}
                     <div className={styles.desktopMenu}>
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`${styles.link} ${pathname === link.href ? styles.active : ''}`}
-                            >
-                                {link.name}
-                            </Link>
+                            <div key={link.href} className={styles.navItem}>
+                                <Link
+                                    href={link.href}
+                                    className={`${styles.link} ${pathname === link.href ? styles.active : ''}`}
+                                >
+                                    {link.name}
+                                    {link.children && <span className={styles.caret}>▾</span>}
+                                </Link>
+                                {link.children && (
+                                    <div className={styles.dropdown}>
+                                        {link.children.map((child) => (
+                                            <Link key={child.href} href={child.href} className={styles.dropdownLink}>
+                                                {child.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
 
@@ -89,14 +106,25 @@ export default function Navigation() {
                 </button>
 
                 {navLinks.map((link) => (
-                    <Link 
-                        key={link.href} 
-                        href={link.href} 
-                        className={styles.mobileLink}
-                        onClick={() => setIsMobileOpen(false)}
-                    >
-                        {link.name}
-                    </Link>
+                    <div key={link.href} className={styles.mobileGroup}>
+                        <Link
+                            href={link.href}
+                            className={styles.mobileLink}
+                            onClick={() => setIsMobileOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                        {link.children && link.children.map((child) => (
+                            <Link
+                                key={child.href}
+                                href={child.href}
+                                className={styles.mobileSubLink}
+                                onClick={() => setIsMobileOpen(false)}
+                            >
+                                {child.name}
+                            </Link>
+                        ))}
+                    </div>
                 ))}
                 {/* Enquire in mobile menu as well */}
                 <Link 
