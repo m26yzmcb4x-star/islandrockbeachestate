@@ -51,11 +51,14 @@ export default async function VillasPage() {
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
                             src={data.intro_image}
-                            alt="Architecturally designed villa at Island Rock Golf Estate"
+                            alt="A modern villa exterior, representative of the architectural direction under consideration"
                             fill
                             style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                     <div className={styles.textColumn}>
                         <span className={styles.sectionTitle}>Design Philosophy</span>

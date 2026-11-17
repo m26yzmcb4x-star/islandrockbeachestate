@@ -32,12 +32,15 @@ export default function InvestmentPage() {
                 <div className={styles.introGrid}>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
-                            src="/images/terrace-ocean-view.jpg"
-                            alt="Luxury villa terrace overlooking the Indian Ocean"
+                            src="/images/villa-living-real.jpg"
+                            alt="A luxury open-plan living space, representative of the villa interiors under consideration"
                             fill
                             style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                     <div className={styles.textColumn}>
                         <span className={styles.sectionTitle}>Lifestyle + Asset</span>

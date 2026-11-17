@@ -47,12 +47,15 @@ export default function GolfPage() {
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
                         <Image
-                            src="/images/new-coastline-aerial.jpg"
-                            alt="Aerial view of the coastal dune landscape planned for the Island Rock golf course"
+                            src="/images/golf-hole-coastal.jpg"
+                            alt="A coastal golf hole, representative of the dune-top routing planned for the course"
                             fill
                             style={{ objectFit: 'cover', borderRadius: '4px' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                 </div>
             </Section>

@@ -5,7 +5,7 @@ cta_text: "Investment Info"
 cta_link: "/investment"
 intro_title: "Design Ethos"
 intro_text: "Our villas draw inspiration from traditional Mozambican craftsmanship, fused with modern minimalist design — large sliding doors that dissolve the barrier between indoor and outdoor living. Final architecture and material choices will be confirmed as the design is finalised."
-intro_image: "/images/villa-front-pool.jpg"
+intro_image: "/images/villa-exterior-real.jpg"
 features_title: "Villa Features"
 features:
   - title: "Space"

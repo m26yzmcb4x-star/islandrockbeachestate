@@ -83,12 +83,15 @@ export default function Home() {
           <div className={styles.introGrid}>
             <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '500px' }}>
               <Image
-                src="/images/new-coastline-aerial.jpg"
-                alt="Coastal dune landscape planned for the Island Rock golf course"
+                src="/images/golf-hole-coastal.jpg"
+                alt="A coastal golf hole, representative of the course planned for Island Rock"
                 fill
                 style={{ objectFit: 'cover', borderRadius: '4px' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                Representative Image
+              </div>
             </div>
             <div className={styles.textColumn}>
               <span className={styles.sectionTitle}>The Golf</span>
@@ -136,12 +139,15 @@ export default function Home() {
             </div>
             <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '500px' }}>
               <Image
-                src="/images/terrace-ocean-view.jpg"
-                alt="Ocean-view terrace representative of the planned Island Rock hotel"
+                src="/images/hotel-pool-aerial-real.jpg"
+                alt="A tropical resort pool, representative of the style planned for the Island Rock hotel"
                 fill
                 style={{ objectFit: 'cover', borderRadius: '4px' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                Representative Image
+              </div>
             </div>
           </div>
         </ScrollReveal>

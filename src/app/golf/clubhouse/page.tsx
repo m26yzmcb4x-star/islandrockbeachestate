@@ -46,12 +46,15 @@ export default function GolfClubhousePage() {
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '360px' }}>
                         <Image
-                            src="/images/villa-sunset-overview.jpg"
-                            alt="Concept image for the low-key clubhouse setting near the course"
+                            src="/images/clubhouse-exterior-real.jpg"
+                            alt="A golf clubhouse overlooking a green, representative of the setting planned for Island Rock"
                             fill
                             style={{ objectFit: 'cover', borderRadius: '4px' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                 </div>
             </Section>

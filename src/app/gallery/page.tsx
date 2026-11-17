@@ -9,7 +9,7 @@ import styles from "@/styles/Home.module.css";
 type GalleryImage = {
     src: string;
     alt: string;
-    isRender?: boolean;
+    badge?: "Artist Impression" | "Representative Image";
 };
 
 type GalleryCategory = {
@@ -21,16 +21,49 @@ type GalleryCategory = {
 
 const categories: GalleryCategory[] = [
     {
+        id: "course",
+        heading: "The Course",
+        note: "Representative photography of coastal golf elsewhere, not Island Rock's own course. Renders of the actual routing are coming once the design is finalised.",
+        images: [
+            { src: '/images/golf-hole-coastal.jpg', alt: 'A coastal golf hole with ocean view', badge: 'Representative Image' },
+            { src: '/images/golf-hole-valley.jpg', alt: 'A green with an ocean backdrop', badge: 'Representative Image' },
+        ],
+    },
+    {
+        id: "clubhouse",
+        heading: "The Clubhouse",
+        note: "Representative photography of a golf clubhouse elsewhere, not Island Rock's own building.",
+        images: [
+            { src: '/images/clubhouse-exterior-real.jpg', alt: 'A golf clubhouse overlooking a green at sunset', badge: 'Representative Image' },
+        ],
+    },
+    {
+        id: "hotel",
+        heading: "The Hotel",
+        note: "Representative photography of a tropical resort elsewhere, not Island Rock's own hotel.",
+        images: [
+            { src: '/images/hotel-pool-aerial-real.jpg', alt: 'A tropical resort pool among palm trees', badge: 'Representative Image' },
+            { src: '/images/hotel-room-real.jpg', alt: 'A hotel room opening onto an ocean view', badge: 'Representative Image' },
+        ],
+    },
+    {
+        id: "dining",
+        heading: "Dining",
+        note: "Representative photography of seaside dining elsewhere.",
+        images: [
+            { src: '/images/restaurant-terrace-real.jpg', alt: 'A table set for dining on a seaside terrace', badge: 'Representative Image' },
+        ],
+    },
+    {
         id: "villas",
         heading: "The Villas",
-        note: "Images below are indicative concept photography, not completed villa designs.",
+        note: "Images below are representative or indicative concept photography, not completed villa designs.",
         images: [
-            { src: '/images/villa-front-pool.jpg', alt: 'Villa with front-facing pool overlooking the ocean', isRender: true },
-            { src: '/images/villa-aerial-topdown.jpg', alt: 'Top-down aerial of the villa design and layout', isRender: true },
-            { src: '/images/beach-deck-view.jpg', alt: 'View from the deck towards the Indian Ocean', isRender: true },
-            { src: '/images/terrace-ocean-view.jpg', alt: 'Villa terrace with panoramic ocean vista', isRender: true },
-            { src: '/images/living-room-view.jpg', alt: 'Open-plan living room with ocean views', isRender: true },
-            { src: '/images/interior-sunbeams.jpg', alt: 'Natural light streaming into villa interior', isRender: true },
+            { src: '/images/villa-exterior-real.jpg', alt: 'A modern villa exterior', badge: 'Representative Image' },
+            { src: '/images/villa-living-real.jpg', alt: 'A luxury open-plan living space with pool and ocean view', badge: 'Representative Image' },
+            { src: '/images/villa-aerial-topdown.jpg', alt: 'Top-down aerial of the villa design and layout', badge: 'Artist Impression' },
+            { src: '/images/beach-deck-view.jpg', alt: 'View from the deck towards the Indian Ocean', badge: 'Artist Impression' },
+            { src: '/images/interior-sunbeams.jpg', alt: 'Natural light streaming into villa interior', badge: 'Artist Impression' },
             { src: '/images/beach-hammock.jpg', alt: 'Hammock on a secluded beach under palms' },
         ],
     },
@@ -49,15 +82,6 @@ const categories: GalleryCategory[] = [
             { src: '/images/palm-tree-1.jpg', alt: 'Palm trees along the Mozambican coast' },
         ],
     },
-];
-
-// The Course, Clubhouse and Hotel each need their own renders -- none exist
-// on file yet, so each shows an honest placeholder rather than borrowed or
-// mismatched imagery, per the accuracy rule that text and images must agree.
-const pendingGalleries = [
-    { heading: "The Course", href: "/golf/course", cta: "View the Course" },
-    { heading: "The Clubhouse", href: "/golf/clubhouse", cta: "View the Clubhouse" },
-    { heading: "The Hotel", href: "/hotel", cta: "View the Hotel" },
 ];
 
 function GalleryGrid({ images }: { images: GalleryImage[] }) {
@@ -85,7 +109,7 @@ function GalleryGrid({ images }: { images: GalleryImage[] }) {
                             onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                         />
                     </div>
-                    {img.isRender && (
+                    {img.badge && (
                         <div style={{
                             position: 'absolute',
                             bottom: '8px',
@@ -98,7 +122,7 @@ function GalleryGrid({ images }: { images: GalleryImage[] }) {
                             padding: '0.25rem 0.5rem',
                             borderRadius: '2px',
                         }}>
-                            Artist Impression
+                            {img.badge}
                         </div>
                     )}
                 </div>
@@ -149,32 +173,6 @@ export default function GalleryPage() {
                     </div>
                 </div>
             </Section>
-
-            {/* Renders pending for Course, Clubhouse and Hotel */}
-            {pendingGalleries.map((g) => (
-                <Section key={g.heading} background="stone">
-                    <div style={{ textAlign: 'center' }}>
-                        <h3 className={styles.heading} style={{ marginBottom: '1rem' }}>{g.heading}</h3>
-                        <div style={{
-                            width: '100%',
-                            maxWidth: '800px',
-                            margin: '0 auto',
-                            aspectRatio: '16 / 9',
-                            background: 'rgba(0,0,0,0.08)',
-                            borderRadius: '4px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            border: '1px dashed rgba(0,0,0,0.15)',
-                        }}>
-                            <div style={{ textAlign: 'center', opacity: 0.5 }}>
-                                <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', marginBottom: '0.25rem' }}>Renders coming soon</p>
-                            </div>
-                        </div>
-                        <Link href={g.href} className={styles.link} style={{ display: 'inline-block', marginTop: '1.25rem' }}>{g.cta}</Link>
-                    </div>
-                </Section>
-            ))}
 
             {/* Categorised gallery */}
             {categories.map((cat) => (

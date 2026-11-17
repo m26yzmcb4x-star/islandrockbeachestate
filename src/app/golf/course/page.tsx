@@ -49,12 +49,15 @@ export default function GolfCoursePage() {
                 <div className={styles.introGrid}>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '360px' }}>
                         <Image
-                            src="/images/new-coastline-aerial.jpg"
-                            alt="Concept image of the dune landscape planned for holes 1 and 2"
+                            src="/images/golf-hole-coastal.jpg"
+                            alt="A coastal golf hole, representative of the dune-top setting planned for holes 1 and 2"
                             fill
                             style={{ objectFit: 'cover', borderRadius: '4px' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                     <div className={styles.textColumn}>
                         <span className={styles.sectionTitle}>Holes 1 &amp; 2</span>
@@ -78,12 +81,15 @@ export default function GolfCoursePage() {
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '360px' }}>
                         <Image
-                            src="/images/villa-coastline-aerial.jpg"
-                            alt="Concept image of the valley setting for hole 3"
+                            src="/images/golf-hole-valley.jpg"
+                            alt="A green with an ocean backdrop, representative of the valley setting planned for hole 3"
                             fill
                             style={{ objectFit: 'cover', borderRadius: '4px' }}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        <div style={{ position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.55)', color: 'white', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>
+                            Representative Image
+                        </div>
                     </div>
                 </div>
             </Section>
