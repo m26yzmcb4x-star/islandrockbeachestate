@@ -10,7 +10,7 @@ import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
     title: "The Estate | Island Rock Golf Estate, Mozambique",
-    description: `${FACTS.positioningLine} ${FACTS.villas.planned} private villas, a signature coastal course, and quiet, timeless accessible luxury.`,
+    description: `${FACTS.positioningLine} ${FACTS.villas.planned} villa stands, a full ${FACTS.golf.holes}-hole golf course, and quiet, timeless accessible luxury.`,
     keywords: ["Island Rock Estate", "Mozambique beachfront", "private estate", "luxury coastal development", "Jangamo estate"],
     openGraph: { url: "https://islandrockestate.com/estate" },
 };

@@ -5,11 +5,12 @@ import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
     title: "The Hotel | Island Rock Golf Estate, Mozambique",
-    description: "A boutique beachfront hotel at Island Rock Golf Estate in Jangamo, Mozambique — accommodation, dining and spa alongside the golf course and ocean. Currently in development.",
-    keywords: ["Mozambique boutique hotel", "Jangamo hotel", "beachfront hotel Mozambique", "golf estate hotel", "Inhambane accommodation"],
+    description: `A ${FACTS.hotel.rooms}-room beachfront hotel at Island Rock Golf Estate, on the beach at the estate's southern tip in Jangamo, Mozambique. Currently in development.`,
+    keywords: ["Mozambique hotel", "Jangamo hotel", "beachfront hotel Mozambique", "golf estate hotel", "Inhambane accommodation"],
     openGraph: { url: "https://islandrockestate.com/hotel" },
 };
 
@@ -18,7 +19,7 @@ export default function HotelPage() {
         <main>
             <Hero
                 headline="The Hotel"
-                subheadline="A boutique retreat between the fairways and the sea."
+                subheadline="On the beach, at the estate's southern tip."
                 variant="small"
                 ctaText="Register Interest"
                 ctaLink="/contact"
@@ -26,7 +27,7 @@ export default function HotelPage() {
 
             {/* Development notice */}
             <div style={{ background: 'var(--color-charcoal)', color: 'white', textAlign: 'center', padding: '0.85rem 2rem', fontSize: '0.78rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-                In Development &nbsp;·&nbsp; Design & concept underway &nbsp;·&nbsp;{' '}
+                Concept Stage &nbsp;·&nbsp; {FACTS.hotel.rooms} Rooms Planned &nbsp;·&nbsp;{' '}
                 <Link href="/contact" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Register your interest</Link>
             </div>
 
@@ -36,11 +37,12 @@ export default function HotelPage() {
                         <span className={styles.sectionTitle}>The Concept</span>
                         <h2 className={styles.heading}>Stay, Play, Unwind</h2>
                         <p className={styles.paragraph}>
-                            The Island Rock hotel is envisioned as an intimate, low-density retreat — a place to
-                            arrive for a weekend of golf, stay for the ocean, and leave already planning a return.
+                            {FACTS.hotel.position}. A place to arrive for a weekend of golf, stay for the
+                            ocean, and leave already planning a return.
                             <br /><br />
-                            Rooms and suites are being designed to open to sea breezes and dune-forest quiet,
-                            with dining and spa that draw on the estate&apos;s coastal setting.
+                            Rooms and suites are being designed to open to sea breezes, with dining and
+                            spa that draw on the estate&apos;s coastal setting. See its position on the{' '}
+                            <Link href="/masterplan" className={styles.link}>Masterplan</Link>.
                         </p>
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
@@ -60,8 +62,8 @@ export default function HotelPage() {
                     <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '3rem' }}>What to Expect</h3>
                     <div className={styles.featuresGrid}>
                         <div className={styles.featureCard}>
-                            <h4 className={styles.featureTitle}>Boutique Rooms</h4>
-                            <p>A small collection of rooms and suites, each with ocean or garden outlook.</p>
+                            <h4 className={styles.featureTitle}>{FACTS.hotel.rooms} Rooms</h4>
+                            <p>Reception, pool, rooms and spa all drawn on the current masterplan.</p>
                         </div>
                         <div className={styles.featureCard}>
                             <h4 className={styles.featureTitle}>Dining &amp; Spa</h4>
@@ -73,8 +75,8 @@ export default function HotelPage() {
                         </div>
                     </div>
                     <p className={styles.paragraph} style={{ textAlign: 'center', marginTop: '2.5rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        Room counts, rates and opening dates will be confirmed closer to launch.
-                        Details on this page are indicative and subject to change.
+                        Rates and opening dates will be confirmed closer to launch. This page accepts
+                        registrations of interest only — there is no booking yet.
                     </p>
                 </div>
             </Section>
@@ -83,7 +85,7 @@ export default function HotelPage() {
                 <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'white' }}>
                     <h2 className={styles.heading} style={{ color: 'white', marginBottom: '1.5rem' }}>Join the Priority List</h2>
                     <p className={styles.paragraph} style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto 2rem auto' }}>
-                        Register your interest for opening announcements and early booking offers.
+                        Register your interest for opening announcements. No booking is available yet.
                     </p>
                     <Link href="/contact" className={styles.primaryButton}>Register Interest</Link>
                 </div>

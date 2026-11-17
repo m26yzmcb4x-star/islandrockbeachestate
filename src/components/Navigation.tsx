@@ -32,6 +32,7 @@ export default function Navigation() {
                 { name: "Clubhouse", href: "/golf/clubhouse" },
             ]
         },
+        { name: "Masterplan", href: "/masterplan" },
         { name: "Investment", href: "/investment" },
         { name: "The Villas", href: "/villas" },
         { name: "Hotel", href: "/hotel" },

@@ -1,10 +1,17 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+const INTEREST_LABELS: Record<string, string> = {
+    villa: 'A villa',
+    hotel: 'A hotel stay',
+    golf: 'Golf membership',
+    investment: 'Investment',
+};
+
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, message, honeypot } = body;
+        const { name, email, phone, interest, message, honeypot } = body;
 
         // Honeypot check
         if (honeypot) {
@@ -14,6 +21,11 @@ export async function POST(request: Request) {
         if (!name || !email || !message) {
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
+
+        if (!interest || !INTEREST_LABELS[interest]) {
+            return NextResponse.json({ message: 'Please select what you are interested in' }, { status: 400 });
+        }
+        const interestLabel = INTEREST_LABELS[interest];
 
         // 1. Send data to n8n Webhook (best-effort automation, never the only delivery path)
         let webhookDelivered = false;
@@ -27,6 +39,7 @@ export async function POST(request: Request) {
                         name,
                         email,
                         phone: phone || '',
+                        interest,
                         message,
                         source: 'website',
                         timestamp: new Date().toISOString()
@@ -51,11 +64,12 @@ export async function POST(request: Request) {
                 from: 'Island Rock Estate <info@islandrockestate.com>',
                 to: ['fritz@islandrockestate.com'],
                 replyTo: email,
-                subject: `New Enquiry from ${name} - Island Rock Estate`,
+                subject: `New Enquiry (${interestLabel}) from ${name} - Island Rock Estate`,
                 text: `
 Name: ${name}
 Email: ${email}
 Phone: ${phone || 'Not provided'}
+Interested in: ${interestLabel}
 
 Message:
 ${message}
@@ -65,6 +79,7 @@ ${message}
 <p><strong>Name:</strong> ${name}</p>
 <p><strong>Email:</strong> ${email}</p>
 <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+<p><strong>Interested in:</strong> ${interestLabel}</p>
 <br/>
 <p><strong>Message:</strong></p>
 <p>${message.replace(/\n/g, '<br>')}</p>

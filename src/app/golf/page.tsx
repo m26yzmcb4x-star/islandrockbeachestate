@@ -5,10 +5,11 @@ import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
     title: "The Golf Course | Island Rock Golf Estate, Mozambique",
-    description: "A signature coastal golf course at Island Rock Golf Estate in Jangamo, Mozambique — designed to sit lightly on the dune landscape, with ocean views from the fairways. Currently in development.",
+    description: `A full ${FACTS.golf.holes}-hole coastal golf course at Island Rock Golf Estate in Jangamo, Mozambique — routed through the dune landscape, with ocean views from the opening holes. Currently in development.`,
     keywords: ["Mozambique golf course", "coastal golf estate", "Jangamo golf", "golf villas Mozambique", "Inhambane golf"],
     openGraph: { url: "https://islandrockestate.com/golf" },
 };
@@ -18,7 +19,7 @@ export default function GolfPage() {
         <main>
             <Hero
                 headline="The Golf Course"
-                subheadline="Championship golf on Mozambique's untouched dune coast."
+                subheadline="A full 18-hole course on Mozambique's untouched dune coast."
                 variant="small"
                 ctaText="Register Interest"
                 ctaLink="/contact"
@@ -26,7 +27,7 @@ export default function GolfPage() {
 
             {/* Development notice */}
             <div style={{ background: 'var(--color-charcoal)', color: 'white', textAlign: 'center', padding: '0.85rem 2rem', fontSize: '0.78rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-                In Development &nbsp;·&nbsp; Course design & routing underway &nbsp;·&nbsp;{' '}
+                Concept Stage &nbsp;·&nbsp; Full {FACTS.golf.holes}-Hole Routing Complete &nbsp;·&nbsp;{' '}
                 <Link href="/contact" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Register your interest</Link>
             </div>
 
@@ -36,11 +37,12 @@ export default function GolfPage() {
                         <span className={styles.sectionTitle}>The Vision</span>
                         <h2 className={styles.heading}>Golf, Framed by the Ocean</h2>
                         <p className={styles.paragraph}>
-                            Island Rock&apos;s signature course is being designed to move with the natural
-                            contours of the Jangamo dune landscape — routed to preserve indigenous vegetation
-                            and to open sightlines to the Indian Ocean from the fairways.
+                            The course is routed to move with the natural contours of the Jangamo dune
+                            landscape — preserving indigenous vegetation and opening sightlines to the
+                            Indian Ocean from the opening holes.
                             <br /><br />
                             The result: a walkable, memorable round where the coastline is always part of the game.
+                            See the full routing on the <Link href="/masterplan" className={styles.link}>Masterplan</Link>.
                         </p>
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '400px' }}>
@@ -61,7 +63,7 @@ export default function GolfPage() {
                     <div className={styles.featuresGrid}>
                         <Link href="/golf/course" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
                             <h4 className={styles.featureTitle}>The Course &rarr;</h4>
-                            <p>18 holes, par 72 — dune-top ocean views on 1 and 2, a par-3 valley hole at 3.</p>
+                            <p>{FACTS.golf.holes} holes, full routing complete — dune-top ocean views on 1 and 2, a valley hole at 3.</p>
                         </Link>
                         <Link href="/golf/membership" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
                             <h4 className={styles.featureTitle}>Membership &rarr;</h4>
@@ -69,11 +71,11 @@ export default function GolfPage() {
                         </Link>
                         <Link href="/golf/clubhouse" className={styles.featureCard} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
                             <h4 className={styles.featureTitle}>Clubhouse &rarr;</h4>
-                            <p>A separate, low-key building near the course, open to everyone on the estate.</p>
+                            <p>At the southern end of the course, beside the first tee. Scale to be confirmed.</p>
                         </Link>
                     </div>
                     <p className={styles.paragraph} style={{ textAlign: 'center', marginTop: '2.5rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        Course specifications, par, and yardage will be published as the design is finalised.
+                        Par and yardage for each hole will be published once confirmed by the course designer.
                         Details on this page are indicative and subject to change.
                     </p>
                 </div>

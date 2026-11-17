@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
     title: "FAQ — Ownership, Investment & Access | Island Rock Golf Estate",
@@ -71,6 +72,37 @@ export default function FAQPage() {
                         </div>
                     </div>
 
+                    <div className={styles.faqGroup} style={{ marginBottom: '4rem' }}>
+                        <h3 className={styles.heading} style={{ fontSize: '2rem', borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '2rem' }}>Golf &amp; Hotel</h3>
+
+                        <div className={styles.faqItem} style={{ marginBottom: '2.5rem' }}>
+                            <h4 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}>Is the golf course open to the public?</h4>
+                            <p className={styles.paragraph} style={{ fontSize: '1rem', lineHeight: '1.7', maxWidth: '100%' }}>
+                                Yes. The {FACTS.golf.holes}-hole course is open to estate owners, hotel guests
+                                and the wider public, with membership, tournaments and stay-and-play golf
+                                all part of the plan. See <Link href="/golf/membership">Membership</Link> for details.
+                            </p>
+                        </div>
+
+                        <div className={styles.faqItem} style={{ marginBottom: '2.5rem' }}>
+                            <h4 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}>How many rooms will the hotel have?</h4>
+                            <p className={styles.paragraph} style={{ fontSize: '1rem', lineHeight: '1.7', maxWidth: '100%' }}>
+                                {FACTS.hotel.rooms} rooms, planned on the beach at the estate&apos;s southern
+                                tip. No operator has been confirmed yet, and there is no booking available —
+                                registration of interest only.
+                            </p>
+                        </div>
+
+                        <div className={styles.faqItem} style={{ marginBottom: '2.5rem' }}>
+                            <h4 className={styles.featureTitle} style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}>How many villas are planned?</h4>
+                            <p className={styles.paragraph} style={{ fontSize: '1rem', lineHeight: '1.7', maxWidth: '100%' }}>
+                                {FACTS.villas.planned} villa stands are laid out on the current masterplan,
+                                each {FACTS.villas.standSizeM2}. See the full layout on the{' '}
+                                <Link href="/masterplan">Masterplan</Link>.
+                            </p>
+                        </div>
+                    </div>
+
                     <div style={{ textAlign: 'center', marginTop: '4rem' }}>
                         <p className={styles.paragraph} style={{ marginBottom: '1.5rem' }}>Have more questions?</p>
                         <Link href="/contact" className={styles.primaryButton}>Contact the Developer</Link>
@@ -127,6 +159,30 @@ function FAQJsonLd() {
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Nothing is built yet — Island Rock is currently at the concept stage. The restaurant and beach bar are planned to open first, followed by the golf course, then the hotel and villas in phases. A firm construction timeline will be announced once funding is secured."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the golf course open to the public?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes. The ${FACTS.golf.holes}-hole course is open to estate owners, hotel guests and the wider public, with membership, tournaments and stay-and-play golf all part of the plan.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many rooms will the hotel have?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `${FACTS.hotel.rooms} rooms, planned on the beach at the estate's southern tip. No operator has been confirmed yet, and there is no booking available — registration of interest only.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many villas are planned?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `${FACTS.villas.planned} villa stands are laid out on the current masterplan, each ${FACTS.villas.standSizeM2}.`
                 }
             }
         ]

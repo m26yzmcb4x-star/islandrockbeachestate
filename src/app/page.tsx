@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <Hero
         headline="Island Rock Golf Estate"
-        subheadline="Championship Golf. Beachfront Living. A Rare Investment on Mozambique's Untouched Coast."
+        subheadline={`${FACTS.golf.holes} Holes of Golf. Beachfront Living. A Rare Investment on Mozambique's Untouched Coast.`}
         ctaText="Explore the Estate"
         ctaLink="#lifestyle"
       />
@@ -31,8 +31,8 @@ export default function Home() {
               <p className={styles.paragraph}>
                 <strong>Southern Mozambique — Inhambane Province — Jangamo District</strong>
                 <br /><br />
-                Play a signature coastal golf course, then walk to reef-protected water.
-                Island Rock Golf Estate pairs championship golf with pristine beaches and indigenous dune forests
+                Play a full {FACTS.golf.holes}-hole coastal golf course, then walk to reef-protected water.
+                Island Rock Golf Estate pairs golf with pristine beaches and indigenous dune forests
                 in one of Africa’s last untouched coastal regions.
                 <br /><br />
                 <strong>Nothing is built yet — register to follow the estate from the ground up.</strong>
@@ -92,10 +92,10 @@ export default function Home() {
             </div>
             <div className={styles.textColumn}>
               <span className={styles.sectionTitle}>The Golf</span>
-              <h3 className={styles.heading}>A Signature Coastal Course</h3>
+              <h3 className={styles.heading}>A Full {FACTS.golf.holes}-Hole Coastal Course</h3>
               <p className={styles.paragraph}>
-                A championship course routed through the dune landscape, with ocean views from the fairways.
-                Golf-front villa positions and a future clubhouse anchor estate life.
+                The full routing is complete: holes 1 and 2 play along the dune top with ocean views,
+                then the course drops into a valley before returning along the coast.
                 <br /><br />
                 <strong>In development — register for early access.</strong>
               </p>
@@ -105,15 +105,30 @@ export default function Home() {
         </ScrollReveal>
       </Section>
 
+      <Section background="white">
+        <ScrollReveal>
+          <div className={styles.textColumn} style={{ textAlign: 'center', alignItems: 'center' }}>
+            <span className={styles.sectionTitle}>The Masterplan</span>
+            <h3 className={styles.heading}>Where Everything Sits</h3>
+            <p className={styles.paragraph} style={{ maxWidth: '640px' }}>
+              The clubhouse anchors the southern end of the course, beside the first tee. The hotel
+              sits further south again, on the beach at the estate&apos;s tip. {FACTS.villas.planned} villa
+              stands are laid out across the dunes and valley between them.
+            </p>
+            <Link href="/masterplan" className={styles.primaryButton} style={{ marginTop: '1rem' }}>View the Full Masterplan</Link>
+          </div>
+        </ScrollReveal>
+      </Section>
+
       <Section background="stone">
         <ScrollReveal>
           <div className={styles.introGrid}>
             <div className={styles.textColumn}>
               <span className={styles.sectionTitle}>The Hotel</span>
-              <h3 className={styles.heading}>A Boutique Beachfront Retreat</h3>
+              <h3 className={styles.heading}>{FACTS.hotel.rooms} Rooms on the Beach</h3>
               <p className={styles.paragraph}>
-                An intimate stay-and-play retreat between the fairways and the sea — rooms, dining and spa
-                drawing on the estate&apos;s coastal setting.
+                At the estate&apos;s southern tip, on the beach — rooms, dining and spa drawing on the
+                estate&apos;s coastal setting.
                 <br /><br />
                 <strong>In development — join the priority list.</strong>
               </p>

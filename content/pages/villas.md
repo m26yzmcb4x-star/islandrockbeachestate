@@ -1,10 +1,10 @@
 ---
 headline: "The Villas"
-subheadline: "Modern thatch architecture driven by natural materials and light."
+subheadline: "Architecture driven by natural materials and light."
 cta_text: "Investment Info"
 cta_link: "/investment"
 intro_title: "Design Ethos"
-intro_text: "Our villas draw inspiration from traditional Mozambican craftsmanship, fused with modern minimalist design. Think high thatch ceilings, polished concrete floors, and large sliding doors that dissolve the barrier between indoor and outdoor living."
+intro_text: "Our villas draw inspiration from traditional Mozambican craftsmanship, fused with modern minimalist design — large sliding doors that dissolve the barrier between indoor and outdoor living. Final architecture and material choices will be confirmed as the design is finalised."
 intro_image: "/images/villa-front-pool.jpg"
 features_title: "Villa Features"
 features:

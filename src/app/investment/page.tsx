@@ -43,9 +43,9 @@ export default function InvestmentPage() {
                         <span className={styles.sectionTitle}>Lifestyle + Asset</span>
                         <h2 className={styles.heading}>Hybrid Value</h2>
                         <p className={styles.paragraph}>
-                            Island Rock Estate is positioned as both a private coastal lifestyle destination
-                            and a strategic long-term beachfront investment. We offer a rare opportunity to own
-                            prime beachfront land at accessible entry points, with long-term appreciation built
+                            Island Rock Golf Estate is positioned as both a private golf-and-coastal
+                            lifestyle destination and a strategic long-term investment. It offers a rare
+                            opportunity to get in early on a golf estate with long-term appreciation built
                             on scarcity and growing international demand.
                         </p>
                     </div>
@@ -58,10 +58,10 @@ export default function InvestmentPage() {
                     <span className={styles.sectionTitle} style={{ display: 'block', textAlign: 'center', marginBottom: '0.5rem' }}>The Scale</span>
                     <h3 className={styles.heading} style={{ textAlign: 'center', marginBottom: '0.75rem' }}>What&apos;s Planned</h3>
                     <p className={styles.paragraph} style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem auto' }}>
-                        A {FACTS.sizeHectares}-hectare golf, residential and hotel estate — {FACTS.golf.holes} holes,{' '}
-                        {FACTS.villas.planned} freestanding villas ({FACTS.villas.sizeRangeM2} m², tailored to bedrooms
-                        and client needs), and a {FACTS.hotel.rooms}-room sea-facing hotel. All currently at concept stage.
-                        Villa positions, specifications and pricing will be confirmed as the estate is finalised.
+                        A {FACTS.sizeHectares}-hectare golf, residential and hotel estate — a full {FACTS.golf.holes}-hole
+                        course, {FACTS.villas.planned} villa stands ({FACTS.villas.standSizeM2}, tailored to bedrooms
+                        and client needs), and a {FACTS.hotel.rooms}-room beachfront hotel. All currently at concept stage.
+                        Villa architecture, specifications and pricing will be confirmed as the estate is finalised.
                     </p>
                     <div style={{ textAlign: 'center' }}>
                         <Link href="/contact" className={styles.primaryButton} style={{ display: 'inline-block' }}>
@@ -79,7 +79,11 @@ export default function InvestmentPage() {
                         <div className={styles.featureCard}>
                             <Shield size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
                             <h4 className={styles.featureTitle}>Government-Backed Golf Zone</h4>
-                            <p>Mozambique&apos;s Council of Ministers approved a special golf tourism zone in Inhambane, covering areas including Jangamo, in August 2026.</p>
+                            <p>
+                                Mozambique&apos;s Council of Ministers approved a special golf tourism zone in
+                                Inhambane, covering areas including Jangamo, in August 2026.{' '}
+                                <a href={FACTS.golfZoneSource} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Source</a>
+                            </p>
                         </div>
                         <div className={styles.featureCard}>
                             <TrendingUp size={32} strokeWidth={1.5} className={styles.cardIcon} color="#4A6C6F" />
@@ -130,14 +134,15 @@ export default function InvestmentPage() {
 
                     <div style={{ marginTop: '2.5rem', background: 'var(--color-sand)', padding: '1.5rem', borderRadius: '4px' }}>
                         <p style={{ fontSize: '0.9rem', lineHeight: 1.7, margin: 0 }}>
-                            <strong>Full legal guide available.</strong> Our Investment Brief includes a plain-language
-                            ownership guide prepared with our Mozambican legal advisors. Request it below.
+                            <strong>Full legal guide available on request.</strong> Speak to our team for a
+                            plain-language ownership guide prepared with our Mozambican legal advisors.
                         </p>
                     </div>
                 </div>
             </Section>
 
-            {/* Lead Magnet */}
+            {/* Lead capture -- the downloadable Investment Brief is switched off until its
+                PDF is rewritten to match the golf estate (no outdated pricing/returns). */}
             <Section id="brief" background="stone">
                 <div style={{ maxWidth: '680px', margin: '0 auto' }}>
                     <InvestmentBriefCapture />

@@ -5,10 +5,11 @@ import Section from "@/components/Section";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { FACTS } from "@/lib/facts";
 
 export const metadata: Metadata = {
     title: "The Clubhouse | Island Rock Golf Estate, Mozambique",
-    description: "A low-key clubhouse near the course at Island Rock Golf Estate, open to everyone on the estate — not a formal halfway house. Currently in development.",
+    description: "The clubhouse at Island Rock Golf Estate sits at the southern end of the course, beside the first tee, open to everyone on the estate. Currently in development.",
     keywords: ["golf clubhouse Mozambique", "Jangamo golf estate clubhouse"],
     openGraph: { url: "https://islandrockestate.com/golf/clubhouse" },
 };
@@ -18,7 +19,7 @@ export default function GolfClubhousePage() {
         <main>
             <Hero
                 headline="The Clubhouse"
-                subheadline="Low-key, by the course, open to everyone."
+                subheadline="At the southern end of the course, open to everyone."
                 variant="small"
                 ctaText="Register Interest"
                 ctaLink="/contact"
@@ -33,11 +34,14 @@ export default function GolfClubhousePage() {
                 <div className={styles.introGrid}>
                     <div className={styles.textColumn}>
                         <span className={styles.sectionTitle}>The Concept</span>
-                        <h2 className={styles.heading}>A Place to Gather, Not a Statement</h2>
+                        <h2 className={styles.heading}>A Place to Gather</h2>
                         <p className={styles.paragraph}>
-                            The clubhouse sits as a separate, low-key building near the course — open to
-                            every owner, hotel guest and visiting golfer on the estate. It is not planned
-                            as a formal halfway house, just a simple place to start and finish a round.
+                            {FACTS.clubhouse.position}, with its own practice green. It is open to every
+                            owner, hotel guest and visiting golfer on the estate — not restricted to
+                            villa owners alone.
+                            <br /><br />
+                            A separate halfway house sits at the northern turn of the course, between the
+                            outward and inward nines.
                         </p>
                     </div>
                     <div className={styles.imageColumn} style={{ position: 'relative', minHeight: '360px' }}>
@@ -65,12 +69,12 @@ export default function GolfClubhousePage() {
                             <p>Open to everyone on the estate — not restricted to villa owners or hotel guests alone.</p>
                         </div>
                         <div className={styles.featureCard}>
-                            <h4 className={styles.featureTitle}>Light-Footprint Design</h4>
-                            <p>A compact, low-key building rather than a large formal clubhouse complex.</p>
+                            <h4 className={styles.featureTitle}>Halfway House</h4>
+                            <p>A separate building at the northern turn, partway through the round.</p>
                         </div>
                     </div>
                     <p className={styles.paragraph} style={{ textAlign: 'center', marginTop: '2.5rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        Design details will be published as the clubhouse plans are finalised.
+                        The clubhouse&apos;s final scale and design will be published as plans are confirmed.
                     </p>
                 </div>
             </Section>

@@ -66,7 +66,8 @@ export default function LocationPage() {
                         <h2 className={locationStyles.mapTitle}>Find Your Paradise</h2>
                         <p className={locationStyles.mapSubtitle}>
                             Located approximately 400km north of Maputo and 25km south of Inhambane.
-                            Use our interactive map to explore the estate and plan your journey.
+                            Use our interactive map to explore the estate and plan your journey, or see
+                            exactly where everything sits on the <Link href="/masterplan">Masterplan</Link>.
                         </p>
                     </div>
 

@@ -97,6 +97,15 @@ a {
   transform: translateY(0);
 }
 
+/* Content must never stay invisible if the observer is slow, fails, or motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 img {
   max-width: 100%;
   display: block;

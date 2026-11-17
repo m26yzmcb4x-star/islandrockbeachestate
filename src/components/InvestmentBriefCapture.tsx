@@ -39,11 +39,11 @@ export default function InvestmentBriefCapture() {
                 textAlign: 'center',
             }}>
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', marginBottom: '0.75rem' }}>
-                    Brief on its way.
+                    You&apos;re on the list.
                 </h3>
                 <p style={{ opacity: 0.75, lineHeight: 1.7 }}>
-                    We will send the Island Rock Investment Brief to your inbox shortly.
-                    Our team will also follow up directly if you have any questions.
+                    Our team will follow up directly, and we&apos;ll send the investment brief as soon
+                    as it&apos;s ready.
                 </p>
             </div>
         );
@@ -56,11 +56,12 @@ export default function InvestmentBriefCapture() {
             padding: '2.5rem',
         }}>
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', marginBottom: '0.5rem' }}>
-                Download the Investment Brief
+                Register as an Investor
             </h3>
             <p style={{ opacity: 0.75, lineHeight: 1.7, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                A 6-page PDF covering the site plan, floor plans, pricing, ownership structure,
-                and projected returns. Enter your email and we will send it directly.
+                The investment brief is being rewritten to match the current golf estate plan.
+                Leave your email and our team will follow up directly, and send the brief as
+                soon as it&apos;s ready.
             </p>
             <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <input
@@ -95,7 +96,7 @@ export default function InvestmentBriefCapture() {
                         whiteSpace: 'nowrap',
                     }}
                 >
-                    {status === "submitting" ? "Sending…" : "Send Me the Brief"}
+                    {status === "submitting" ? "Sending…" : "Register Interest"}
                 </button>
             </form>
             {status === "error" && (

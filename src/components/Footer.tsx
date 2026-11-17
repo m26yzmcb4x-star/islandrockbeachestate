@@ -57,6 +57,7 @@ export default function Footer() {
                         <Link href="/estate" className={styles.link}>The Estate</Link>
                         <Link href="/villas" className={styles.link}>The Villas</Link>
                         <Link href="/golf" className={styles.link}>Golf</Link>
+                        <Link href="/masterplan" className={styles.link}>Masterplan</Link>
                         <Link href="/hotel" className={styles.link}>Hotel</Link>
                         <Link href="/location" className={styles.link}>Location</Link>
                         <Link href="/lifestyle" className={styles.link}>Lifestyle</Link>

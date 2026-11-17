@@ -21,30 +21,9 @@ type GalleryCategory = {
 
 const categories: GalleryCategory[] = [
     {
-        id: "coastline",
-        heading: "The Coastline",
-        images: [
-            { src: '/images/hero-reef.jpg', alt: 'Reef-protected bay with turquoise waters' },
-            { src: '/images/coastline.jpg', alt: 'Pristine Jangamo coastline from above' },
-            { src: '/images/aerial-reef.jpg', alt: 'Aerial view of the coral reef system' },
-            { src: '/images/tropical-beach.jpg', alt: 'Tropical beach with white sand and clear water' },
-            { src: '/images/sunset-dunes.jpg', alt: 'Golden sunset over the coastal dunes' },
-        ],
-    },
-    {
-        id: "wildlife",
-        heading: "Marine Life & Nature",
-        images: [
-            { src: '/images/turtle-hatchling.jpg', alt: 'Baby turtle hatchling on the beach' },
-            { src: '/images/reef-detail.jpg', alt: 'Crystal clear reef waters ideal for snorkeling' },
-            { src: '/images/shipwreck.jpg', alt: 'Historic shipwreck near Island Rock' },
-            { src: '/images/palm-tree-1.jpg', alt: 'Palm trees along the Mozambican coast' },
-        ],
-    },
-    {
         id: "villas",
         heading: "The Villas",
-        note: "Images below are artist impressions of the completed villa designs.",
+        note: "Images below are indicative concept photography, not completed villa designs.",
         images: [
             { src: '/images/villa-front-pool.jpg', alt: 'Villa with front-facing pool overlooking the ocean', isRender: true },
             { src: '/images/villa-aerial-topdown.jpg', alt: 'Top-down aerial of the villa design and layout', isRender: true },
@@ -55,6 +34,30 @@ const categories: GalleryCategory[] = [
             { src: '/images/beach-hammock.jpg', alt: 'Hammock on a secluded beach under palms' },
         ],
     },
+    {
+        id: "coastline",
+        heading: "The Coastline",
+        images: [
+            { src: '/images/hero-reef.jpg', alt: 'Reef-protected bay with turquoise waters' },
+            { src: '/images/coastline.jpg', alt: 'Pristine Jangamo coastline from above' },
+            { src: '/images/aerial-reef.jpg', alt: 'Aerial view of the coral reef system' },
+            { src: '/images/tropical-beach.jpg', alt: 'Tropical beach with white sand and clear water' },
+            { src: '/images/sunset-dunes.jpg', alt: 'Golden sunset over the coastal dunes' },
+            { src: '/images/turtle-hatchling.jpg', alt: 'Baby turtle hatchling on the beach' },
+            { src: '/images/reef-detail.jpg', alt: 'Crystal clear reef waters ideal for snorkeling' },
+            { src: '/images/shipwreck.jpg', alt: 'Historic shipwreck near Island Rock' },
+            { src: '/images/palm-tree-1.jpg', alt: 'Palm trees along the Mozambican coast' },
+        ],
+    },
+];
+
+// The Course, Clubhouse and Hotel each need their own renders -- none exist
+// on file yet, so each shows an honest placeholder rather than borrowed or
+// mismatched imagery, per the accuracy rule that text and images must agree.
+const pendingGalleries = [
+    { heading: "The Course", href: "/golf/course", cta: "View the Course" },
+    { heading: "The Clubhouse", href: "/golf/clubhouse", cta: "View the Clubhouse" },
+    { heading: "The Hotel", href: "/hotel", cta: "View the Hotel" },
 ];
 
 function GalleryGrid({ images }: { images: GalleryImage[] }) {
@@ -146,6 +149,32 @@ export default function GalleryPage() {
                     </div>
                 </div>
             </Section>
+
+            {/* Renders pending for Course, Clubhouse and Hotel */}
+            {pendingGalleries.map((g) => (
+                <Section key={g.heading} background="stone">
+                    <div style={{ textAlign: 'center' }}>
+                        <h3 className={styles.heading} style={{ marginBottom: '1rem' }}>{g.heading}</h3>
+                        <div style={{
+                            width: '100%',
+                            maxWidth: '800px',
+                            margin: '0 auto',
+                            aspectRatio: '16 / 9',
+                            background: 'rgba(0,0,0,0.08)',
+                            borderRadius: '4px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '1px dashed rgba(0,0,0,0.15)',
+                        }}>
+                            <div style={{ textAlign: 'center', opacity: 0.5 }}>
+                                <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', marginBottom: '0.25rem' }}>Renders coming soon</p>
+                            </div>
+                        </div>
+                        <Link href={g.href} className={styles.link} style={{ display: 'inline-block', marginTop: '1.25rem' }}>{g.cta}</Link>
+                    </div>
+                </Section>
+            ))}
 
             {/* Categorised gallery */}
             {categories.map((cat) => (

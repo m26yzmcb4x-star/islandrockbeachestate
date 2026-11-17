@@ -11,11 +11,12 @@ export default function ContactPage() {
         name: "",
         email: "",
         phone: "",
+        interest: "",
         message: "",
         honeypot: "" // Client-side honeypot
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
@@ -35,7 +36,7 @@ export default function ContactPage() {
 
             if (response.ok) {
                 setStatus("success");
-                setFormData({ name: "", email: "", phone: "", message: "", honeypot: "" });
+                setFormData({ name: "", email: "", phone: "", interest: "", message: "", honeypot: "" });
             } else {
                 const data = await response.json();
                 setStatus("error");
@@ -115,6 +116,19 @@ export default function ContactPage() {
                                     onChange={handleChange}
                                     style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)' }}
                                 />
+                                <select
+                                    name="interest"
+                                    required
+                                    value={formData.interest}
+                                    onChange={handleChange}
+                                    style={{ padding: '1rem', border: '1px solid #ccc', fontFamily: 'var(--font-body)', background: 'white', color: formData.interest ? 'inherit' : '#767676' }}
+                                >
+                                    <option value="" disabled>I&apos;m interested in…</option>
+                                    <option value="villa">A villa</option>
+                                    <option value="hotel">A hotel stay</option>
+                                    <option value="golf">Golf membership</option>
+                                    <option value="investment">Investment</option>
+                                </select>
                                 {/* Hidden honeypot field for spam protection */}
                                 <input
                                     type="text"
